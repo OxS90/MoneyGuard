@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { register } from '../../redux/authorisation/operations';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useState } from 'react';
 import logo from '../../assets/logo.svg';
 import styles from './RegisterForm.module.css';
 
