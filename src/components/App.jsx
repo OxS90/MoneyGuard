@@ -1,16 +1,16 @@
-import { React, useEffect, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { React, useEffect } from 'react';
+// import { Routes, Route } from 'react-router-dom';
 // import { Layout } from './Layout';
-import { PrivateRoute } from '../Routes/PrivateRoute';
-import { RestrictedRoute } from '../Routes/RestrictedRoute';
+// import { PrivateRoute } from '../Routes/PrivateRoute';
+// import { RestrictedRoute } from '../Routes/RestrictedRoute';
 import { refreshUser } from '../redux/authorisation/operations';
 import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 
-const HomePage = lazy(() => import('../pages/HomePage/Home'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
-const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
-const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
+// const HomePage = lazy(() => import('../pages/HomePage/Home'));
+// const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
+// const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
+// const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
 // const StatiscticsPage = lazy(() =>
 //   import('../pages/StatisticsPage/Statistics')
 // );
