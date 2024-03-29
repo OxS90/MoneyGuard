@@ -23,7 +23,6 @@ const ValidationSchema = Yup.object().shape({
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const [_password, setPassword] = useState('');
 
   const handleSubmit = (values, { resetForm }) => {
     const formData = {
@@ -89,10 +88,7 @@ export const RegisterForm = () => {
               placeholder="Password"
               autoComplete="off"
               value={values.password}
-              onChange={e => {
-                handleChange(e);
-                setPassword(e.target.value);
-              }}
+              onChange={handleChange}
             />
           </label>
 
