@@ -23,7 +23,8 @@ const ValidationSchema = Yup.object().shape({
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const [password, setPassword] = useState('');
+  // Remove the declaration of the 'password' variable
+  // const [password, setPassword] = useState('');
 
   const handleSubmit = (values, { resetForm }) => {
     const formData = {
