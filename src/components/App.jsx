@@ -9,7 +9,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 // import { useMediaQuery } from 'react-responsive';
 // import { ToastContainer } from 'react-toastify';
-const HomePage = lazy(() => import('../pages/HomePage/Home'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
