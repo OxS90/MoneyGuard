@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 import { refreshUser } from '../redux/authorisation/operations';
 // import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
+import Dashboard from '../pages/DashboardPage/Dashboard';
+import MediaQuery from 'react-responsive';
 // import { RegisterForm } from './RegisterForm/RegisterForm';
 // const HomePage = lazy(() => import('../pages/HomePage/Home'));
 // const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
@@ -23,7 +25,7 @@ const App = () => {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
+  
   return (
     <div>
       {/* isRefreshing ? (<b>Refreshing user...</b>) : (
@@ -35,8 +37,18 @@ const App = () => {
         {' '}
         <Route path="/statistics" element={<StatiscticsPage />} />
       </Routes>
+ <MediaQuery minWidth={1224}>
+        <RegisterForm />
+        <Dashboard />
+        <MediaQuery minWidth={1824}>
+          <Dashboard />
+        </MediaQuery>
+      </MediaQuery>
+      <MediaQuery minResolution="2dppx">
+        {/* You can also use a function (render prop) as a child */}
+        {matches => (matches ? <Dashboard /> : <Dashboard />)}
+      </MediaQuery>
     </div>
-
     // <Routes>
     //   <Route
     //     path="/"
