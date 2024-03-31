@@ -9,13 +9,12 @@ import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 // import { useMediaQuery } from 'react-responsive';
 // import { ToastContainer } from 'react-toastify';
-
-// Lazy-loaded components
 const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
 const StatisticsPage = lazy(() => import('../pages/StatisticsPage/Statistics'));
+// const CurrencyPage = lazy(() => import('../pages/CurrencyPage/Currency'));
 
 const App = () => {
   const dispatch = useDispatch();
