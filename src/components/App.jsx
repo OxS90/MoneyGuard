@@ -1,36 +1,41 @@
-import { React, useEffect } from 'react';
-// import { Routes, Route } from 'react-router-dom';
+import { React, lazy, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 // import { Layout } from './Layout';
 // import { PrivateRoute } from '../Routes/PrivateRoute';
 // import { RestrictedRoute } from '../Routes/RestrictedRoute';
 import { refreshUser } from '../redux/authorisation/operations';
-import { useAuth } from '../hooks/useAuth';
+// import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
-import { RegisterForm } from './RegisterForm/RegisterForm';
+// import { RegisterForm } from './RegisterForm/RegisterForm';
 // const HomePage = lazy(() => import('../pages/HomePage/Home'));
 // const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 // const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 // const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
-// const StatiscticsPage = lazy(() =>
-//   import('../pages/StatisticsPage/Statistics')
-// );
+const StatiscticsPage = lazy(() =>
+  import('../pages/StatisticsPage/Statistics')
+);
 // const CurrencyPage = lazy(() => import('../pages/CurrencyPage/Currency'));
 
 const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
+  // const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
-    <>
-      App
-      <RegisterForm />
-    </>
+  return (
+    <div>
+      {/* isRefreshing ? (<b>Refreshing user...</b>) : (
+      <>
+        App
+        <RegisterForm />
+      </> */}
+      <Routes>
+        {' '}
+        <Route path="/statistics" element={<StatiscticsPage />} />
+      </Routes>
+    </div>
 
     // <Routes>
     //   <Route
@@ -61,14 +66,7 @@ const App = () => {
     //         </PrivateRoute>
     //       }
     //     />
-    //     <Route
-    //       path="/statistics"
-    //       element={
-    //         <PrivateRoute>
-    //           <StatiscticsPage />
-    //         </PrivateRoute>
-    //       }
-    //     />
+    //
 
     //     <Route
     //       path="/currency"
