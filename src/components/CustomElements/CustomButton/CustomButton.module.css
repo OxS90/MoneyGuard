@@ -1,0 +1,50 @@
+/* CustomButton.module.css */
+.customButtonBase {
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customButton {
+  color: white;
+  background: var(
+    --button-gradient,
+    linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%)
+  );
+  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.customNavLinkBtn {
+  background-color: grey;
+}
+
+.customButtonBase:hover {
+  color: #3a2f43;
+}
+.customButtonBase:focus {
+  outline: none;
+}
+
+.customButtonBase:active {
+  transform: translateY(2px);
+}
+
+.customButtonBase:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.customNavLinkBtn:hover {
+  background-color: darkgrey;
+}
