@@ -1,9 +1,12 @@
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { register } from '../../redux/authorisation/operations';
 import * as Yup from 'yup';
-import { Formik } from 'formik';
+import { ErrorMessage, Field, Formik } from 'formik';
 import logo from '../../assets/logo.svg';
-import styles from './RegisterForm.module.css';
+import ProgressBar from './ProgressBar';
+import CustomButton from '../CustomElements/CustomButton/CustomButton';
+// import styles from './RegisterForm.module.css';
 
 const ValidationSchema = Yup.object().shape({
   username: Yup.string()
@@ -12,7 +15,7 @@ const ValidationSchema = Yup.object().shape({
     .required('Required'),
   email: Yup.string().email('Invalid email address').required('Required'),
   password: Yup.string()
-    .min(6, 'Must be at least 6 characters')
+    .min(4, 'Must be at least 4 characters')
     .max(12, 'Must be 12 characters or less')
     .required('Required'),
   passwordConfirm: Yup.string()
@@ -20,8 +23,9 @@ const ValidationSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export const RegisterForm = () => {
+const RegisterForm = () => {
   const dispatch = useDispatch();
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (values, { resetForm }) => {
     const formData = {
@@ -45,8 +49,8 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
       autoComplete="off"
     >
-      {({ values, handleChange }) => (
-        <form className={styles.MainContainer}>
+      {({ values, handleSubmit }) => (
+        <form onSubmit={handleSubmit} autoComplete="off">
           <img
             src={logo}
             alt="Logo MoneyGuard"
@@ -57,55 +61,62 @@ export const RegisterForm = () => {
           <h3>MoneyGuard</h3>
           <label>
             Username:
-            <input
+            <Field
               name="username"
               type="text"
               placeholder="Name"
               autoComplete="off"
-              value={values.username}
-              onChange={handleChange}
             />
+            <ErrorMessage component="span" name="username" />
           </label>
 
           <label>
             Email:
-            <input
+            <Field
               name="email"
               type="email"
               placeholder="E-mail"
               autoComplete="off"
-              value={values.email}
-              onChange={handleChange}
             />
+            <ErrorMessage component="span" name="email" />
           </label>
 
           <label>
             Password:
-            <input
+            <Field
               name="password"
               type="password"
               placeholder="Password"
               autoComplete="off"
               value={values.password}
-              onChange={handleChange}
+              onChange={e => {
+                values.password = e.target.value;
+                setPassword(e.target.value);
+              }}
             />
+            <ErrorMessage component="span" name="password" />
           </label>
 
           <label>
             Confirm Password:
-            <input
+            <Field
               name="passwordConfirm"
               type="password"
               placeholder="Confirm password"
               autoComplete="off"
-              value={values.passwordConfirm}
-              onChange={handleChange}
             />
+            <ProgressBar password={password} />
+            <ErrorMessage component="span" name="passwordConfirm" />
           </label>
 
-          <button type="submit">Register</button>
+          <CustomButton type="submit">Register</CustomButton>
+          <CustomButton isNavLink to="/login">
+            Log In
+          </CustomButton>
         </form>
       )}
     </Formik>
   );
 };
+
+export default RegisterForm;

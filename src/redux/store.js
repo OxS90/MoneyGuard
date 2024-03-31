@@ -1,19 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { authReducer } from './authorisation/slice';
-import { statisticsReducer } from './statistics/slice';
 import {
+  persistStore,
   FLUSH,
+  REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-  REHYDRATE,
-  persistStore,
 } from 'redux-persist';
+import { PersistedAuthReducer } from '../redux/authorisation/slice';
+import { statisticsReducer } from './statistics/slice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
+    auth: PersistedAuthReducer,
     statistics: statisticsReducer,
   },
   middleware: getDefaultMiddleware =>
@@ -23,4 +23,5 @@ export const store = configureStore({
       },
     }),
 });
+
 export const persistor = persistStore(store);
