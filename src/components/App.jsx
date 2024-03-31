@@ -31,6 +31,7 @@ const App = () => {
   ) : (
     <>
       <MediaQuery minWidth={1224}>
+        <RegisterForm />
         <Dashboard />
         <MediaQuery minWidth={1824}>
           <Dashboard />
