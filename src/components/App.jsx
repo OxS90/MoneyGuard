@@ -9,8 +9,8 @@ import { refreshUser } from '../redux/authorisation/operations';
 import { useDispatch } from 'react-redux';
 import Dashboard from '../pages/DashboardPage/Dashboard';
 // import MediaQuery from 'react-responsive';
-import { RegisterForm } from './RegisterForm/RegisterForm';
-import StatisticsPage from '../pages/StatisticsPage/Statistics';
+// import { RegisterForm } from './RegisterForm/RegisterForm';
+// import StatisticsPage from '../pages/StatisticsPage/Statistics';
 // const HomePage = lazy(() => import('../pages/HomePage/Home'));
 // const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 // const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
@@ -33,9 +33,9 @@ const App = () => {
         App
         <RegisterForm />
       </> */}
-      <RegisterForm />
-      <StatisticsPage />
+      {/* <RegisterForm /> */}
       <Dashboard />
+      {/* <StatisticsPage /> */}
     </div>
     // <Routes>
     //   <Route
