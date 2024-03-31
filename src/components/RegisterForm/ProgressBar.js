@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PasswordStrengthBar from 'react-password-strength-bar-with-style-item';
-import style from './ProgressBar.module.css';
+// import style from './ProgressBar.module.css';
 const ProgressBar = ({ password }) => {
   const [strength, setStrength] = useState(0);
 
