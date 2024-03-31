@@ -6,6 +6,8 @@ import { React, useEffect } from 'react';
 import { refreshUser } from '../redux/authorisation/operations';
 import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
+import Dashboard from 'pages/DashboardPage/Dashboard';
+import MediaQuery from 'react-responsive';
 
 // const HomePage = lazy(() => import('../pages/HomePage/Home'));
 // const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
@@ -27,7 +29,18 @@ const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <>App</>
+    <>
+      <MediaQuery minWidth={1224}>
+        <Dashboard />
+        <MediaQuery minWidth={1824}>
+          <Dashboard />
+        </MediaQuery>
+      </MediaQuery>
+      <MediaQuery minResolution="2dppx">
+        {/* You can also use a function (render prop) as a child */}
+        {matches => (matches ? <Dashboard /> : <Dashboard />)}
+      </MediaQuery>
+    </>
     // <Routes>
     //   <Route
     //     path="/"
