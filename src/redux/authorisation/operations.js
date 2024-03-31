@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { api, setToken, clearToken } from '../../configAxios/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
