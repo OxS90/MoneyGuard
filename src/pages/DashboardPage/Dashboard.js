@@ -1,7 +1,8 @@
 import Header from 'components/Header/Header';
 import { Navigation } from 'components/Navigation/Navigation';
-import Home from 'pages/HomePage/Home';
+
 import css from './Dashboard.module.css';
+import Home from 'pages/HomePage/HomePage';
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <Header />
       <div className={css.list}>
         <Navigation />
+
         <Home />
       </div>
       {/* Currency */}
