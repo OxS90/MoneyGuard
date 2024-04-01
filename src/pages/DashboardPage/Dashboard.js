@@ -12,7 +12,6 @@ const Dashboard = () => {
       <Header />
       <div className={css.list}>
         <Navigation />
-
         <Home />
       </div>
       {/* Currency */}
