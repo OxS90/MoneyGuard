@@ -4,7 +4,7 @@ import css from './Navigation.module.css';
 // import { SlChart, SlHome } from 'react-icons/sl';
 import { selectIsLoggedIn } from '../../redux/authorisation/selectors';
 import { SlChart, SlHome } from 'react-icons/sl';
-import { Balance } from 'components/Balance/Balance';
+import { Balance } from '../Balance/Balance';
 
 export const Navigation = () => {
   // const { user } = useAuth();
