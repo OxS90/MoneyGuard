@@ -1,50 +1,57 @@
+// Navigation.js
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 // import { useAuth } from '../../hooks/useAuth';
 import css from './Navigation.module.css';
-// import { SlChart, SlHome } from 'react-icons/sl';
 import { selectIsLoggedIn } from '../../redux/authorisation/selectors';
 import { SlChart, SlHome } from 'react-icons/sl';
 import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 
-export const Navigation = () => {
-  // const { user } = useAuth();
-  // const { isLoggedIn } = useAuth();
+const Navigation = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <div className={css.responsiveBox}>
-      <section>
-        <nav className={css.linksBox}>
-          <NavLink to="/" exact="true" className={css.link}>
-            <h3>
-              <span className={css.iconMargin}>
-                <SlHome />
-              </span>
-              <p className={css.nameHidden}>Home</p>
-            </h3>
-          </NavLink>
+      <nav className={css.linksBox}>
+        <NavLink to="/" exact className={css.link}>
+          <span className={css.iconMargin}>
+            <SlHome />
+          </span>
+          <p className={css.nameHidden}>Home</p>
+        </NavLink>
 
-          {selectIsLoggedIn && (
-            <NavLink to="/statistics" exact="true" className={css.link}>
-              <h3>
-                <span className={css.iconMargin}>
-                  <SlChart />
-                </span>
-                <p className={css.nameHidden}>Statistics</p>
-              </h3>
-            </NavLink>
-          )}
-          {selectIsLoggedIn && (
-            <NavLink to="/" exact="true" className={css.linkCurrency}>
-              <h3>
-                <span className={css.iconMargin}>
-                  <RiMoneyDollarBoxLine />
-                </span>
-                <p className={css.nameHidden}>Currency</p>
-              </h3>
-            </NavLink>
-          )}
-        </nav>
-      </section>
+        {isLoggedIn && (
+          <NavLink to="/statistics" exact className={css.link}>
+            <span className={css.iconMargin}>
+              <SlChart />
+            </span>
+            <p className={css.nameHidden}>Statistics</p>
+          </NavLink>
+        )}
+
+        {/* Afișează link-ul pentru "Currency" cu icon-ul "RiMoneyDollarBoxLine" */}
+        {isLoggedIn && (
+          <NavLink to="/" exact className={css.linkCurrency}>
+            <span className={css.iconMargin}>
+              <RiMoneyDollarBoxLine />
+            </span>
+            <p className={css.nameHidden}>Currency</p>
+          </NavLink>
+        )}
+
+        {/* Afișează icon-ul "Currency" doar pe dispozitivele mobile */}
+        {isLoggedIn && (
+          <NavLink to="/" exact className={css.linkCurrency}>
+            <span className={css.iconMarginMobile}>
+              <RiMoneyDollarBoxLine />
+            </span>
+            <p className={css.nameHidden}>Currency</p>
+          </NavLink>
+        )}
+      </nav>
     </div>
   );
 };
+
+export default Navigation;

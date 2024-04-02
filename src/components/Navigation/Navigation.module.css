@@ -1,4 +1,4 @@
-/* mobile responsive */
+/* Navigation.module.css */
 .responsiveBox {
   background: url(../../assets//statisticsPage-background-d.webp);
   width: 100%;
@@ -14,11 +14,6 @@
   font-weight: 400;
   font-size: 18px;
   color: #fbfbfb;
-
-  .link.active {
-    color: #ffffff99;
-    font-weight: 700;
-  }
 }
 
 .nameHidden {
@@ -33,11 +28,6 @@
   font-weight: 400;
   font-size: 18px;
   color: #fbfbfb;
-
-  .link.active {
-    color: #ffffff99;
-    font-weight: 700;
-  }
 }
 
 .iconMargin {
@@ -51,11 +41,9 @@
   justify-content: center;
 }
 
-/* laptop responsive */
 @media only screen and (min-width: 768px) {
   .responsiveBox {
     flex-direction: row;
-    display: flex;
     width: 100%;
     height: 30vh;
     padding: 20px;
@@ -84,11 +72,6 @@
     font-weight: 400;
     font-size: 18px;
     color: #fbfbfb;
-
-    .link.active {
-      color: #ffffff99;
-      font-weight: 700;
-    }
   }
 
   .linkCurrency {
@@ -110,12 +93,11 @@
   }
 }
 
-/* desktop responsive */
 @media only screen and (min-width: 1280px) {
   .responsiveBox {
     background: url(../../assets//statisticsPage-background-d.webp);
     height: 100vh;
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -128,11 +110,6 @@
     font-weight: 400;
     font-size: 18px;
     color: #fbfbfb;
-
-    .link.active {
-      color: #ffffff99;
-      font-weight: 700;
-    }
   }
 
   .linkCurrency {

@@ -1,20 +1,27 @@
-.list {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  height: 12vh;
-  padding: 6px;
-}
-
 .dashBox {
   background-color: url(../../assets//statisticsPage-background-d.webp);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Adăugați padding pentru a spația conținutul de margini */
 }
 
-.balanceBox {
-  flex-direction: row;
+.sideSegment {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  padding: 20px;
+  max-width: 400px; /* Limitați lățimea segmentului lateral */
+}
+
+.contentSegment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px; /* Limitați lățimea conținutului principal */
 }
 
 .currencyBox {
@@ -23,22 +30,20 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .balanceBox {
+  .dashBox {
     flex-direction: row;
-    display: flex;
-    width: 45%;
-    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
   }
-}
 
-@media only screen and (min-width: 1280px) {
-  .list {
-    display: flex;
-    flex-direction: column;
+  .sideSegment {
+    width: 50%; /* Setăm lățimea la 50% pentru fiecare segment pe ecranul laptopului */
+    max-width: none; /* Anulăm limita de lățime */
+    margin-right: 20px; /* Adăugăm un spațiu între segmentele laterale și conținutul principal */
+  }
+
+  .contentSegment {
+    width: 50%; /* Setăm lățimea la 50% pentru fiecare segment pe ecranul laptopului */
+    max-width: none; /* Anulăm limita de lățime */
   }
 }
