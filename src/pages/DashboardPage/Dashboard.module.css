@@ -1,13 +1,38 @@
 .list {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  height: 12vh;
+  padding: 6px;
+}
+
+.dashBox {
+  background-color: url(../../assets//statisticsPage-background-d.webp);
+}
+
+.balanceBox {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.currencyBox {
+  display: flex;
+  background-color: #ffffff1a;
 }
 
 @media only screen and (min-width: 768px) {
   .list {
     display: flex;
     flex-direction: column;
+  }
+
+  .balanceBox {
+    flex-direction: row;
+    display: flex;
+    width: 45%;
+    padding: 20px;
   }
 }
 

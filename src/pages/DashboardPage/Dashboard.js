@@ -1,8 +1,7 @@
 import Header from 'components/Header/Header';
 import { Navigation } from 'components/Navigation/Navigation';
-
 import css from './Dashboard.module.css';
-import Home from 'pages/HomePage/HomePage';
+import { Balance } from 'components/Balance/Balance';
 
 const Dashboard = () => {
   return (
@@ -10,11 +9,19 @@ const Dashboard = () => {
       {/* 3 parti mari si late */}
       {/* Header Main cu tranzactii Side cu Balance */}
       <Header />
-      <div className={css.list}>
-        <Navigation />
-        <Home />
+      <div className={css.dashBox}>
+        <div className={css.list}>
+          <Navigation />
+        </div>
+
+        <div className={css.balanceBox}>
+          <Balance />
+        </div>
       </div>
-      {/* Currency */}
+
+      <div className={css.currencyBox}>
+        <h1>Currency</h1>
+      </div>
     </>
   );
 };
