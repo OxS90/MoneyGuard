@@ -41,7 +41,7 @@ const Header = () => {
             {user.name}
           </NavLink>
 
-          <NavLink
+          <nav
             className={css.exitBtn}
             type="button"
             // onClick={handleExitClick}
@@ -74,7 +74,7 @@ const Header = () => {
                 </defs>
               </svg>
             </NavLink>
-          </NavLink>
+          </nav>
         </nav>
       </ul>
       {/* {isModalOpen && (
