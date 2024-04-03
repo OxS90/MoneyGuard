@@ -1,36 +1,40 @@
-/* CustomButton.module.css */
+@import url(../../../styles//globalVars.css);
+
 .customButtonBase {
-  width: 300px;
+  width: 280px;
   height: 50px;
-  margin-top: 20px;
   border: none;
   border-radius: 20px;
+  font-family: Poppins;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 1.8px;
+  line-height: normal;
   text-transform: uppercase;
-  text-decoration: none;
+  text-align: center;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .customButton {
-  color: white;
-  background: var(
-    --button-gradient,
-    linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%)
-  );
+  color: var(--white);
+  background: var(--button-gradient);
   box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .customNavLinkBtn {
-  background-color: grey;
+  color: var(--text-button);
+  border-radius: 20px;
+  background: rgb(252, 252, 252);
+  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .customButtonBase:hover {
-  color: #3a2f43;
+  color: var(--text-button);
 }
 .customButtonBase:focus {
   outline: none;
@@ -40,11 +44,16 @@
   transform: translateY(2px);
 }
 
-.customButtonBase:disabled {
+/* .customButtonBase:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
+} */
 
 .customNavLinkBtn:hover {
   background-color: darkgrey;
+}
+@media screen and (min-width: 768px) {
+  .customButtonBase {
+    width: 300px;
+  }
 }

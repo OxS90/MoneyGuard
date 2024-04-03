@@ -6,12 +6,16 @@ import { useAuth } from '../../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../redux/authorisation/operations';
 // import Modal from '../Modal/Modal';
+import logo from '../../assets/logo.svg';
 import exit from '../../assets/icons/exit.svg';
 
 const Header = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();
 
+  const handleLogout = () => {
+    dispatch(logOut());
+  };
   const handleLogout = () => {
     dispatch(logOut());
   };
@@ -28,18 +32,19 @@ const Header = () => {
   return (
     <div className={css.header}>
       <div className={css.boxModelLogo}>
-        <svg
-          width="27"
-          height="26"
-          viewBox="0 0 27 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        ></svg>
+        <img
+          src={logo}
+          alt="Logo MoneyGuard"
+          width="36px"
+          height="36px"
+          draggable="false"
+        />
         <span className={css.baseTypography}>Money Guard</span>
       </div>
       <ul className={css.box}>
         <nav className={css.list}>
           <NavLink to="/" className={css.userNameHeader}>
+            {user.username}
             {user.username}
           </NavLink>
           <NavLink to="/login" className={css.exitBtn} onClick={handleLogout}>
