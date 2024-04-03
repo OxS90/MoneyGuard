@@ -16,9 +16,6 @@ const Header = () => {
   const handleLogout = () => {
     dispatch(logOut());
   };
-  const handleLogout = () => {
-    dispatch(logOut());
-  };
   // const [isModalOpen, setIsModalOpen] = useState(false);
 
   // const handleExitClick = () => {
