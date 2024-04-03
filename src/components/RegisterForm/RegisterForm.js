@@ -3,10 +3,13 @@ import { useState } from 'react';
 import { register } from '../../redux/authorisation/operations';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Formik } from 'formik';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/icons/logo.svg';
+import mail from '../../assets/icons/mail.svg';
+import lock from '../../assets/icons/lock.svg';
+import name from '../../assets/icons/name.svg';
 import ProgressBar from './ProgressBar';
 import CustomButton from '../CustomElements/CustomButton/CustomButton';
-// import styles from './RegisterForm.module.css';
+import styles from '../LoginForm/LoginForm.module.css';
 
 const ValidationSchema = Yup.object().shape({
   username: Yup.string()
@@ -50,70 +53,121 @@ const RegisterForm = () => {
       autoComplete="off"
     >
       {({ values, handleSubmit }) => (
-        <form onSubmit={handleSubmit} autoComplete="off">
-          <img
-            src={logo}
-            alt="Logo MoneyGuard"
-            width="36px"
-            height="36px"
-            draggable="false"
-          />
-          <h3>MoneyGuard</h3>
-          <label>
-            Username:
-            <Field
-              name="username"
-              type="text"
-              placeholder="Name"
-              autoComplete="off"
-            />
-            <ErrorMessage component="span" name="username" />
-          </label>
+        <div className={styles.FormWrapper}>
+          <form
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            className={styles.Form}
+          >
+            <div className={styles.Logo}>
+              <img
+                src={logo}
+                alt="Logo MoneyGuard"
+                width="25.461px"
+                height="25.461px"
+                draggable="false"
+              />
+              <h3 className={styles.LogoText}>MoneyGuard</h3>
+            </div>
+            <label className={styles.Input}>
+              <img
+                src={name}
+                alt="name"
+                width="24px"
+                height="24px"
+                draggable="false"
+              />
+              <Field
+                name="username"
+                type="text"
+                placeholder="Name"
+                autoComplete="off"
+                className={styles.InputField}
+              />
+              <div className={styles.error}>
+                <ErrorMessage name="username" component="div" />
+              </div>
+            </label>
 
-          <label>
-            Email:
-            <Field
-              name="email"
-              type="email"
-              placeholder="E-mail"
-              autoComplete="off"
-            />
-            <ErrorMessage component="span" name="email" />
-          </label>
+            <label className={styles.Input}>
+              <img
+                src={mail}
+                alt="mail"
+                width="24px"
+                height="24px"
+                draggable="false"
+              />
+              <Field
+                name="email"
+                type="email"
+                placeholder="E-mail"
+                autoComplete="off"
+                className={styles.InputField}
+              />
+              <div className={styles.error}>
+                <ErrorMessage name="email" component="div" />
+              </div>
+            </label>
 
-          <label>
-            Password:
-            <Field
-              name="password"
-              type="password"
-              placeholder="Password"
-              autoComplete="off"
-              value={values.password}
-              onChange={e => {
-                values.password = e.target.value;
-                setPassword(e.target.value);
-              }}
-            />
-            <ErrorMessage component="span" name="password" />
-          </label>
+            <label className={styles.Input}>
+              <img
+                src={lock}
+                alt="lock"
+                width="24px"
+                height="24px"
+                draggable="false"
+              />
+              <Field
+                className={styles.InputField}
+                name="password"
+                type="password"
+                placeholder="Password"
+                autoComplete="off"
+                value={values.password}
+                onChange={e => {
+                  values.password = e.target.value;
+                  setPassword(e.target.value);
+                }}
+              />
+              <div className={styles.error}>
+                <ErrorMessage name="password" component="div" />
+              </div>
+            </label>
+            <div className={styles.InputWrapper}>
+              <label className={styles.Input}>
+                <img
+                  src={lock}
+                  alt="lock"
+                  width="24px"
+                  height="24px"
+                  draggable="false"
+                />
+                <Field
+                  className={styles.InputField}
+                  name="passwordConfirm"
+                  type="password"
+                  placeholder="Confirm password"
+                  autoComplete="off"
+                />
 
-          <label>
-            Confirm Password:
-            <Field
-              name="passwordConfirm"
-              type="password"
-              placeholder="Confirm password"
-              autoComplete="off"
-            />
-            <ProgressBar password={password} />
-            <ErrorMessage component="span" name="passwordConfirm" />
-          </label>
+                <div className={styles.error}>
+                  <ErrorMessage name="passwordConfirm" component="div" />
+                </div>
+              </label>
+              <div className={styles.ProgressBarWrapper}>
+                <ProgressBar
+                  password={password}
+                  className={styles.ProgressBar}
+                />
+              </div>
+            </div>
 
-          <CustomButton type="submit">Register</CustomButton>
-          <CustomButton isNavLink to="/login">
-            Log In
-          </CustomButton>
-        </form>
+            <CustomButton type="submit">Register</CustomButton>
+            <CustomButton isNavLink to="/login">
+              Log In
+            </CustomButton>
+          </form>
+        </div>
       )}
     </Formik>
   );
