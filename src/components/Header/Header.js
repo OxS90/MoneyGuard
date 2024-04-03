@@ -6,7 +6,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../redux/authorisation/operations';
 // import Modal from '../Modal/Modal';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/icons/logo.svg';
 import exit from '../../assets/icons/exit.svg';
 
 const Header = () => {
