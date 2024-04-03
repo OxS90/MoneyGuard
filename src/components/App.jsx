@@ -1,20 +1,21 @@
-import { React, Suspense, useEffect } from 'react';
+import { React, useEffect } from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Suspense } from 'react';
 // import { Navigate } from 'react-router-dom';
 import { PrivateRoute } from '../Routes/PrivateRoute';
 import { RestrictedRoute } from '../Routes/RestrictedRoute';
 import { refreshUser } from '../redux/authorisation/operations';
 import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
+import NotFoundPage from 'pages/NotFoundPage';
 // import { useMediaQuery } from 'react-responsive';
 // import { ToastContainer } from 'react-toastify';
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
 const StatisticsPage = lazy(() => import('../pages/StatisticsPage/Statistics'));
-// const CurrencyPage = lazy(() => import('../pages/CurrencyPage/Currency'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -70,22 +71,19 @@ const App = () => {
               }
             />
             {/* {isMobile ? (
-            <Route
-              path="/currency"
-              element={<PrivateRoute><CurrencyPage /></PrivateRoute>}
-            />
-          ) : (
-            <Navigate to="/home" />
-          )} */}
+              <Route
+                path="/currency"
+                element={
+                  <PrivateRoute>
+                    <CurrencyPage />
+                  </PrivateRoute>
+                }
+              />
+            ) : (
+              <Navigate to="/home" />
+            )} */}
           </Route>
-          <Route
-            path="*"
-            element={
-              <h1 style={{ paddingTop: '300px', textAlign: 'center' }}>
-                Oh, something went wrong.
-              </h1>
-            }
-          />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>
