@@ -1,4 +1,4 @@
-import api from '../../configAxios/api';
+import { api } from '../../configAxios/api';
 import { setToken, clearToken } from '../../configAxios/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
