@@ -1,7 +1,7 @@
 import Header from 'components/Header/Header';
-import { Navigation } from '../../components/Navigation/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import css from './Dashboard.module.css';
-import Balance from 'components/Balance/Balance';
+import Balance from '../../components/Balance/Balance';
 
 const Dashboard = () => {
   return (
