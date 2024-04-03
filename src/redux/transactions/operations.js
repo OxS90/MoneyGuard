@@ -1,87 +1,74 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
-import { api } from '../../configAxios/api';
+import { api } from 'configAxios/api';
 
-export const getAllTransactions = createAsyncThunk(
-  'transactions/getAllTransactions',
-  async (_, { rejectWithValue }) => {
+export const getTransactionsCategoriesThunk = createAsyncThunk(
+  'getCategories',
+  async (_, thunkApi) => {
     try {
-      const response = await api.get('/transactions');
-      const data = response.data;
-
-      localStorage.setItem('transactions', JSON.stringify(data));
-
+      const { data } = await api.get('/transaction-categories');
       return data;
-    } catch (e) {
-      return rejectWithValue(e.message);
-    }
-  }
-);
-
-export const deleteTransaction = createAsyncThunk(
-  'transactions/deleteTransaction',
-  async (id, { rejectWithValue }) => {
-    try {
-      const response = await api.delete(`/transactions/${id}`);
-      return response.data;
-    } catch (e) {
-      return rejectWithValue(e.message);
-    }
-  }
-);
-
-export const addTransaction = createAsyncThunk(
-  'transactions/addTransaction',
-  async (data, { rejectWithValue }) => {
-    try {
-      const { transactionDate, type, categoryId, comment, amount } = data;
-
-      const transactionData = {
-        transactionDate: new Date(transactionDate).toISOString(),
-        type: type.toUpperCase(),
-        categoryId,
-        comment,
-        amount: parseFloat(amount),
-      };
-
-      const response = await api.post('/transactions', transactionData);
-      return response.data;
     } catch (error) {
-      const errorMessage = error.response?.data?.message || error.message;
-      toast.error(errorMessage);
-      return rejectWithValue(error.message);
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
 
-export const editTransaction = createAsyncThunk(
-  'transactions/editTransaction',
-  async ({ id, values }, thunkAPI) => {
+export const addTransactionThunk = createAsyncThunk(
+  'transactions/new',
+  async (transaction, thunkApi) => {
     try {
-      if (values.type === 'income') {
-        const { category, ...changedData } = values;
-        const response = await api.patch(`/transactions/${id}`, changedData);
-        return response.data;
-      } else {
-        const response = await api.patch(`/transactions/${id}`, values);
-        return response.data;
-      }
-    } catch (e) {
-      toast.error(e.response.data.message);
-      return thunkAPI.rejectWithValue(e.message);
+      const { data } = await api.post('/transactions', transaction);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
 
-export const getCategories = createAsyncThunk(
-  'transactions/getCategories',
-  async (_, { rejectWithValue }) => {
+export const allTransactionThunk = createAsyncThunk(
+  'transactions/all',
+  async (_, ThunkAPI) => {
     try {
-      const response = await api.get(`/transaction-categories`);
-      localStorage.setItem('categories', JSON.stringify(response.data));
-    } catch (e) {
-      toast.error(e.response.data.message);
-      return rejectWithValue(e.message);
+      const { data } = await api.get('/transactions');
+      return data;
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updatedTransactionThunk = createAsyncThunk(
+  'transactions/update',
+  async ({ id, transactionData }, ThunkAPI) => {
+    try {
+      const { data } = await api.patch(`/transactions/${id}`, transactionData);
+      return data;
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteTransactionThunk = createAsyncThunk(
+  'transactions/delete',
+  async (transactionId, ThunkAPI) => {
+    try {
+      await api.delete(`/transactions/${transactionId}`);
+      return transactionId;
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const summaryControllerTransactionThunk = createAsyncThunk(
+  'transactions/summaryController',
+  async (_, ThunkAPI) => {
+    try {
+      const { data } = await api.post('/transactions-summary');
+      return data;
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error.message);
     }
   }
 );
