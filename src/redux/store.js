@@ -8,14 +8,14 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { PersistedAuthReducer } from '../redux/authorisation/slice';
+import { authReducer } from '../redux/authorisation/slice';
 import { statisticsReducer } from './statistics/slice';
 import { PersistedTransactionReducer } from './transactions/slice';
 import balanceReducer from './balance/balanceSlice'; // Balance Backend Ciprian
 
 export const store = configureStore({
   reducer: {
-    auth: PersistedAuthReducer,
+    auth: authReducer,
     statistics: statisticsReducer,
     transactions: PersistedTransactionReducer,
     balance: balanceReducer, // Balance Backend Ciprian
