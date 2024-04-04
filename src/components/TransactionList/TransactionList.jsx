@@ -38,7 +38,6 @@ const TransactionList = () => {
   }, [dispatch]);
 
   const transactions = useSelector(selectSortedTransactions);
-  const categories = useSelector(state => state.categories);
 
   const [isEditTransactionForm, setIsEditTransactionForm] = useState(false);
   const [transactionEditData, setTransactionEditData] = useState({});
