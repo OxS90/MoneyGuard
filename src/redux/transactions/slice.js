@@ -23,6 +23,7 @@ const slice = createSlice({
           state.categories = payload.map(category => {
             return { value: category.id, label: category.name };
           });
+          console.log(state.categories);
         }
       )
       .addCase(addTransactionThunk.fulfilled, (state, { payload }) => {

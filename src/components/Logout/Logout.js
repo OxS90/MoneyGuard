@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { LogoutBtn, LogoTitle, Text } from './Logout.styled';
 import { logOut } from '../../redux/authorisation/operations';
 import { toggleModal } from '../../redux/modal/slice';
-import { CancelBtn } from 'components/Modals/LogOutModal/Modal.styled';
 
 export default function Logout() {
   const dispatch = useDispatch();
@@ -17,11 +16,11 @@ export default function Logout() {
         type="submit"
         onClick={() => {
           dispatch(logOut());
+          dispatch(toggleModal());
         }}
       >
         Logout
       </LogoutBtn>
-      <CancelBtn onClick={() => dispatch(toggleModal())}>Cancel</CancelBtn>
     </>
   );
 }

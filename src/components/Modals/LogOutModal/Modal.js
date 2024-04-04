@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import { ModalWindow, Overlay, ButtonClose, CancelBtn } from './Modal.styled';
 import { useDispatch } from 'react-redux';
 import { toggleModal } from '../../../redux/modal/slice';
-
-const modalRoot = document.querySelector('#modal-root');
 
 export default function Modal({ children, showCloseIcon = true }) {
   const dispatch = useDispatch();
@@ -34,7 +31,7 @@ export default function Modal({ children, showCloseIcon = true }) {
     }
   };
 
-  return createPortal(
+  return (
     <Overlay onClick={handleBackdropClick}>
       <ModalWindow>
         {showCloseIcon && (
@@ -56,7 +53,6 @@ export default function Modal({ children, showCloseIcon = true }) {
           Cancel
         </CancelBtn>
       </ModalWindow>
-    </Overlay>,
-    modalRoot
+    </Overlay>
   );
 }

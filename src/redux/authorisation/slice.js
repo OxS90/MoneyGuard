@@ -1,16 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+
+// Check if a token exists in local storage
+const getTokenFromStorage = () => {
+  return localStorage.getItem('authToken');
+};
 
 const initialState = {
   user: { username: null, email: null },
-  token: null,
-  isLoggedIn: false,
+  token: getTokenFromStorage(), // Initialize token from local storage
+  isLoggedIn: !!getTokenFromStorage(), // Check if token exists for initial isLoggedIn state
   isRefreshing: false,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    // Add a reducer to clear token from local storage during logout
+    clearToken: state => {
+      localStorage.removeItem('authToken');
+      state.token = null;
+      state.isLoggedIn = false;
+      state.user = { username: null, email: null };
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -42,4 +58,15 @@ const authSlice = createSlice({
   },
 });
 
-export const authReducer = authSlice.reducer;
+export const { clearToken } = authSlice.actions; // Export clearToken action
+
+const authReducer = authSlice.reducer;
+
+const persistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+
+export default persistedAuthReducer;

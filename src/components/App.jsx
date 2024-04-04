@@ -32,12 +32,7 @@ const App = () => {
     <>
       <Suspense fallback={<SpinnerLoader />}>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
-            }
-          />
+          <Route path="/" element={<PrivateRoute redirectTo="/home" />} />
           <Route
             path="login"
             element={
