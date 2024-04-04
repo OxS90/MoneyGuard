@@ -8,6 +8,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+
 import persistedAuthReducer from '../redux/authorisation/slice';
 import { statisticsReducer } from './statistics/slice';
 import balanceReducer from './balance/balanceSlice';
