@@ -1,25 +1,15 @@
-import Header from 'components/Header/Header';
-import Navigation from '../../components/Navigation/Navigation';
-import css from './Dashboard.module.css';
-import Balance from '../../components/Balance/Balance';
+import { DashboardContainer, DashboardStyled } from './Dashboard.styled';
+import { Header } from '../../components/Dashboard/Header/Header';
+import { Main } from '../../components/Dashboard/Main/Main';
 
 const Dashboard = () => {
   return (
-    <>
-      {/* Header Main cu tranzactii Side cu Balance */}
+    <DashboardStyled>
       <Header />
-      <div className={css.dashBox}>
-        <div className={css.sideSegment}>
-          <Navigation />
-          <Balance />
-        </div>
-        <div className={css.contentSegment}>
-          <div className={css.currencyBox}>
-            <h1>Currency</h1>
-          </div>
-        </div>
-      </div>
-    </>
+      <DashboardContainer>
+        <Main />
+      </DashboardContainer>
+    </DashboardStyled>
   );
 };
 

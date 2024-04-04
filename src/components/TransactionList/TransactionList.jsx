@@ -17,7 +17,7 @@ import {
 import TransactionCardItem from '../TransactionCardItem/TransactionCardItem';
 import React, { useState } from 'react';
 import { selectSortedTransactios } from '../../redux/transactions/selectors';
-import ModalEditTransaction from '../ModalEditTransaction/ModalEditTransaction';
+import ModalEditTransaction from '../Modals/ModalEditTransaction/ModalEditTransaction';
 import { EditTransactionForm } from '../EditTransactionForm/EditTransactionForm';
 
 const TransactionList = () => {

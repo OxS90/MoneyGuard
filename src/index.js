@@ -5,15 +5,13 @@ import './index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
-import ErrorBoundary from 'ErrorBoundary';
+// import ErrorBoundary from 'ErrorBoundary';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ReduxProvider store={store}>
       <BrowserRouter basename="/MoneyGuard">
-        <ErrorBoundary>
-          <App />
-        </ErrorBoundary>
+        <App />
       </BrowserRouter>
     </ReduxProvider>
   </React.StrictMode>

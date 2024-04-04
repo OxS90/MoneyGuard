@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import { useMediaQuery } from 'react-responsive';
 import ReactDatePicker from 'react-datepicker';
 import { date } from 'yup';
-import Header from '../Header/Header';
+import { Header } from '../../components/Dashboard/Header/Header';
 import {
   CloseBtn,
   CommentInputStyled,

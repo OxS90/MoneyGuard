@@ -13,7 +13,7 @@ import {
 } from '../AddTransaction/Calendar.styled';
 import ReactDatePicker from 'react-datepicker';
 import { date } from 'yup';
-import { BtnSubmit } from '../ModalEditTransaction/ModalEditTransaction.styled';
+import { BtnSubmit } from '../Modals/ModalEditTransaction/ModalEditTransaction.styled';
 import {
   CommentInputStyled,
   ErrorMessage,

@@ -1,54 +1,62 @@
-import { api } from '../../configAxios/api';
-import { setToken, clearToken } from '../../configAxios/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { useNavigate } from 'react-router-dom';
+import { api, setToken, clearToken } from '../../configAxios/api';
+import { toast } from 'react-toastify';
 
 export const register = createAsyncThunk(
   'auth/register',
-  async (credentials, thunkAPI) => {
+  async (credentials, thunkApi) => {
     try {
       const res = await api.post('/auth/sign-up', credentials);
       setToken(res.data.token);
-      console.log('Registration successful:', res.data);
+      console.log('Registration successful:', res.data.token);
+
+      if (res.data && res.status === 201) {
+        const name = credentials.name;
+        toast.success(`Welcome to Money Guard, ${name}!`, {
+          autoClose: 1200,
+        });
+      }
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        error.response.data.message || 'Registration failed. Please try again.'
-      );
+      if (error.res) {
+        if (error.res.status === 409) {
+          toast.error('Email is already in use!', {
+            position: 'top-right',
+            autoClose: 1200,
+          });
+          return thunkApi.rejectWithValue(error.message);
+        }
+      }
     }
   }
 );
 
 export const logIn = createAsyncThunk(
   'auth/login',
-  async (credentials, thunkAPI) => {
+  async (credentials, thunkApi) => {
     try {
       const res = await api.post('/auth/sign-in', credentials);
       setToken(res.data.token);
       console.log('Login successful:', res.data);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        error.response.data.message || 'Login failed. Please try again.'
+      return thunkApi.rejectWithValue(
+        error.response?.data?.message || 'Login failed. Please try again.'
       );
     }
   }
 );
 
-export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
-  const navigate = useNavigate(); // Initialize useHistory hook
-
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
+  const savedToken = thunkApi.getState().auth.token;
+  console.log(savedToken);
   try {
-    // Make sure the endpoint matches your backend API's logout endpoint
     await api.delete('/auth/sign-out');
     clearToken();
     console.log('Logout successful');
-
-    // Redirect to the login page after successful logout
-    navigate.push('/login'); // Replace '/login' with your actual login page route
   } catch (error) {
     console.error('Logout failed:', error);
-    return thunkAPI.rejectWithValue(
+    return thunkApi.rejectWithValue(
       error.response?.data?.message || 'Logout failed.'
     );
   }
@@ -56,21 +64,13 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
-
+  async (_, thunkApi) => {
     try {
-      setToken(persistedToken);
       const res = await api.get('/users/current');
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        error.response.data.message || 'Unable to fetch user data.'
+      return thunkApi.rejectWithValue(
+        error.response?.data?.message || 'Unable to fetch user data.'
       );
     }
   }

@@ -2,15 +2,15 @@ import { React, useEffect } from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
-// import { Navigate } from 'react-router-dom';
 import { PrivateRoute } from '../Routes/PrivateRoute';
 import { RestrictedRoute } from '../Routes/RestrictedRoute';
 import { refreshUser } from '../redux/authorisation/operations';
 import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import NotFoundPage from 'pages/NotFoundPage';
+import { SpinnerLoader } from './Spinner/Spinner';
 // import { useMediaQuery } from 'react-responsive';
-// import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<SpinnerLoader />}>
         <Routes>
           <Route
             path="/"
@@ -70,21 +70,22 @@ const App = () => {
                 </PrivateRoute>
               }
             />
-            {/* {isMobile ? (
-              <Route
-                path="/currency"
-                element={
+            {/* <Route
+              path="/currency"
+              element={
+                isMobile ? (
                   <PrivateRoute>
                     <CurrencyPage />
                   </PrivateRoute>
-                }
-              />
-            ) : (
-              <Navigate to="/home" />
-            )} */}
+                ) : (
+                  <Navigate to={'/home'} />
+                )
+              }
+            /> */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <ToastContainer />
       </Suspense>
     </>
   );
