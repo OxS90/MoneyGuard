@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux'; // Importăm useSelector pentru a accesa starea Redux
 import css from './Balance.module.css';
+// Balance.js
 
-export const Balance = () => {
+const Balance = () => {
   const totalBalance = useSelector(state => state.balance.totalBalance); // Extragem totalul soldului din starea Redux
 
   return (
@@ -15,3 +16,5 @@ export const Balance = () => {
     </div>
   );
 };
+
+export default Balance;
