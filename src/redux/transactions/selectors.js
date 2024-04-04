@@ -1,10 +1,6 @@
 import { INCOME_CODE } from '../../components/AddTransaction/AddTransaction';
 import { createSelector } from '@reduxjs/toolkit';
 
-export function selectTransactions(state) {
-  return state.transactions.transactions;
-}
-
 export function selectCategories(state) {
   return state.transactions.categories;
 }
@@ -16,7 +12,11 @@ export const selectFilteredCategories = createSelector(
   }
 );
 
-export const selectSortedTransactios = createSelector(
+export function selectTransactions(state) {
+  return state.transactions.transactions;
+}
+
+export const selectSortedTransactions = createSelector(
   [selectTransactions],
   transactions => {
     return [...transactions].sort(

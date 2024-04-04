@@ -9,7 +9,7 @@ const getTokenFromStorage = () => {
 };
 
 const initialState = {
-  user: { username: null, email: null },
+  user: { username: null, email: null, balance: null },
   token: getTokenFromStorage(), // Initialize token from local storage
   isLoggedIn: !!getTokenFromStorage(), // Check if token exists for initial isLoggedIn state
   isRefreshing: false,

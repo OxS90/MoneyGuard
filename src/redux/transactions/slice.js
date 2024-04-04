@@ -6,6 +6,8 @@ import {
   getTransactionsCategoriesThunk,
   updatedTransactionThunk,
 } from './operations';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
 const initialState = {
   categories: [],
@@ -23,7 +25,6 @@ const slice = createSlice({
           state.categories = payload.map(category => {
             return { value: category.id, label: category.name };
           });
-          console.log(state.categories);
         }
       )
       .addCase(addTransactionThunk.fulfilled, (state, { payload }) => {
@@ -44,4 +45,14 @@ const slice = createSlice({
   },
 });
 
-export const transactionsReducer = slice.reducer;
+const transactionsReducer = slice.reducer;
+const persistConfig = {
+  key: 'transactions',
+  storage,
+  whitelist: ['transactions'],
+};
+const persistedTransactionsReducer = persistReducer(
+  persistConfig,
+  transactionsReducer
+);
+export default persistedTransactionsReducer;

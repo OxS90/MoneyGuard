@@ -9,18 +9,20 @@ import { useAuth } from '../hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import NotFoundPage from 'pages/NotFoundPage';
 import { SpinnerLoader } from './Spinner/Spinner';
-// import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 import { ToastContainer } from 'react-toastify';
 const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage/Dashboard'));
 const StatisticsPage = lazy(() => import('../pages/StatisticsPage/Statistics'));
+const CurrencyPage = lazy(() => import('../pages/CurrencyPage/Currency'));
+const { Navigate } = require('react-router-dom');
 
 const App = () => {
   const dispatch = useDispatch();
   const { isLoggedIn, token } = useAuth();
-  // const isMobile = useMediaQuery({ minWidth: 240, maxWidth: 767 });
+  const isMobile = useMediaQuery({ minWidth: 240, maxWidth: 767 });
 
   useEffect(() => {
     if (!isLoggedIn && token) {
@@ -32,7 +34,12 @@ const App = () => {
     <>
       <Suspense fallback={<SpinnerLoader />}>
         <Routes>
-          <Route path="/" element={<PrivateRoute redirectTo="/home" />} />
+          <Route
+            path="/"
+            element={
+              <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
+            }
+          />
           <Route
             path="login"
             element={
@@ -65,7 +72,7 @@ const App = () => {
                 </PrivateRoute>
               }
             />
-            {/* <Route
+            <Route
               path="/currency"
               element={
                 isMobile ? (
@@ -76,7 +83,7 @@ const App = () => {
                   <Navigate to={'/home'} />
                 )
               }
-            /> */}
+            />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

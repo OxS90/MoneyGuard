@@ -1,6 +1,9 @@
 import { AddTransaction } from '../AddTransaction/AddTransaction';
 import React, { useState } from 'react';
 import { BtnOpenModal } from './BtnAddTransaction.styled';
+import { getTransactionsCategoriesThunk } from '../../redux/transactions/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFilteredCategories } from '../../redux/transactions/selectors';
 
 const svgOpenModal = (
   <svg
@@ -19,12 +22,19 @@ export const BtnAddTransaction = () => {
   const [isAddTransactionModalOpen, setIsTransactionModalOpen] =
     useState(false);
 
+  const dispatch = useDispatch();
+  const transactionCategories = useSelector(selectFilteredCategories);
+
+  function openAddTransactionModal() {
+    if (!transactionCategories.length) {
+      dispatch(getTransactionsCategoriesThunk());
+    }
+    setIsTransactionModalOpen(true);
+  }
+
   return (
     <>
-      <BtnOpenModal
-        type="button"
-        onClick={() => setIsTransactionModalOpen(true)}
-      >
+      <BtnOpenModal type="button" onClick={openAddTransactionModal}>
         {svgOpenModal}
       </BtnOpenModal>
       {isAddTransactionModalOpen && (

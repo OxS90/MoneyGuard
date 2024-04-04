@@ -16,12 +16,29 @@ import {
 } from './TransactionList.styled';
 import TransactionCardItem from '../TransactionCardItem/TransactionCardItem';
 import React, { useState } from 'react';
-import { selectSortedTransactios } from '../../redux/transactions/selectors';
+import { selectSortedTransactions } from '../../redux/transactions/selectors';
 import ModalEditTransaction from '../Modals/ModalEditTransaction/ModalEditTransaction';
 import { EditTransactionForm } from '../EditTransactionForm/EditTransactionForm';
+import {
+  allTransactionThunk,
+  getTransactionsCategoriesThunk,
+} from '../../redux/transactions/operations';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 const TransactionList = () => {
-  const transactions = useSelector(selectSortedTransactios);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(allTransactionThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getTransactionsCategoriesThunk());
+  }, [dispatch]);
+
+  const transactions = useSelector(selectSortedTransactions);
+  const categories = useSelector(state => state.categories);
 
   const [isEditTransactionForm, setIsEditTransactionForm] = useState(false);
   const [transactionEditData, setTransactionEditData] = useState({});

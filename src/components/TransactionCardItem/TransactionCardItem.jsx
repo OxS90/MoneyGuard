@@ -11,7 +11,7 @@ import {
 import { LuPencil } from 'react-icons/lu';
 import { deleteTransactionThunk } from '../../redux/transactions/operations';
 import { selectCategories } from '../../redux/transactions/selectors';
-// import { changeBalanceValue } from '../../redux/auth/slice';
+// import { refreshUser } from '../../redux/authorisation/operations';
 
 const TransactionCardItem = ({ data, handleModal, setData }) => {
   const dispatch = useDispatch();
@@ -20,12 +20,16 @@ const TransactionCardItem = ({ data, handleModal, setData }) => {
   const categories = useSelector(selectCategories);
 
   const handleDelete = (transactionId, amount) => {
-    dispatch(deleteTransactionThunk(transactionId))
-      .unwrap()
-      .then(() => {
-        // dispatch(changeBalanceValue(amount));
-      });
+    dispatch(deleteTransactionThunk(transactionId)).unwrap();
+    // .then(() => {
+    //   dispatch(changeBalanceValue(amount));
+    // });
   };
+
+  // changeBalanceValue = amount => {
+  //   dispatch(refreshUser());
+  //   balance = balance + amount;
+  // };
 
   function formatNumber(number) {
     return Math.abs(number)
@@ -42,7 +46,7 @@ const TransactionCardItem = ({ data, handleModal, setData }) => {
     <Card>
       <CardLine $plus={amount >= 0}>
         <CardLineTitle>Date</CardLineTitle>
-        <CardLineP>{transactionDate.replaceAll('-', '.')}</CardLineP>
+        <CardLineP>{transactionDate}</CardLineP>
       </CardLine>
       <CardLine $plus={amount >= 0}>
         <CardLineTitle>Type</CardLineTitle>
@@ -51,7 +55,7 @@ const TransactionCardItem = ({ data, handleModal, setData }) => {
       <CardLine $plus={amount >= 0}>
         <CardLineTitle>Category</CardLineTitle>
         <CardLineP>
-          {categories?.filter(c => c?.value === categoryId)[0]?.label}
+          {categories?.find(c => c?.value === categoryId)?.label}
         </CardLineP>
       </CardLine>
       <CardLine $plus={amount >= 0}>
