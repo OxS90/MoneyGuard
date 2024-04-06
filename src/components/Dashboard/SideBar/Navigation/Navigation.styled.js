@@ -5,17 +5,12 @@ export const StyledNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: ${props => props.gap || '12px'};
-
-  margin: 0;
-
+  display: flex;
+  align-items: start;
+  justify-content: center;
   list-style: none;
-  padding: 0;
-  padding-left: 19px;
-  padding-top: 42px;
 
   @media screen and (min-width: 768px) {
-    padding-left: 35px;
-    padding-top: 40px;
   }
 `;
 
@@ -58,18 +53,10 @@ export const StyledNavLink = styled(NavLink)`
 export const StyledNavListMob = styled.ul`
   gap: 32px;
   padding: 0;
-  display: inline-block;
   max-width: max-content;
-
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: row;
   list-style: none;
-
-  @media (max-width: 767px) {
-    margin-top: 12px;
-  }
 `;
 
 export const StyledNavLinkMob = styled(NavLink)`

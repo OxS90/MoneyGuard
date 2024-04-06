@@ -24,6 +24,7 @@ export const DinamicSidebar = () => {
   ) : (
     <DinamicSidebarStyled>
       <Navigation />
+      <Balance />
       {/* {homeActive && <Balance />}
       {currencyActive && <Currency />} */}
     </DinamicSidebarStyled>

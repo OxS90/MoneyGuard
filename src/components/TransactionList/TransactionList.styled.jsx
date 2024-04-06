@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const HomeTab = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
-
   display: none;
 
   @media only screen and (min-width: 768px) {
@@ -129,11 +128,14 @@ export const ListTransaction = styled.tbody`
 `;
 
 export const TransactionCardList = styled.ul`
-  margin-top: 32px;
-  padding-bottom: 8px;
+  padding: 0;
+  max-width: max-content;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
 
   @media only screen and (min-width: 768px) {
     display: none;

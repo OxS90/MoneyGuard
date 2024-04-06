@@ -81,7 +81,7 @@ const RegisterForm = () => {
                 name="username"
                 type="text"
                 placeholder="Name"
-                autoComplete="off"
+                autocomplete="username"
                 className={styles.InputField}
               />
               <div className={styles.error}>
