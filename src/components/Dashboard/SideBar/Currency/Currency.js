@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export const Currency = () => {
   const dispatch = useDispatch();
-  const currency = useSelector(selectCurrency);
+  // const currency = useSelector(selectCurrency);
 
   useEffect(() => {
     dispatch(fetchCurrency());
