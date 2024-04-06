@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/MoneyGuard/static/css/main.86d98e1d.css",
-    "main.js": "/MoneyGuard/static/js/main.888d55cf.js",
+    "main.css": "/MoneyGuard/static/css/main.6c40bba1.css",
+    "main.js": "/MoneyGuard/static/js/main.f518a2c2.js",
     "static/js/309.df5c3557.chunk.js": "/MoneyGuard/static/js/309.df5c3557.chunk.js",
     "static/css/470.e891dc29.chunk.css": "/MoneyGuard/static/css/470.e891dc29.chunk.css",
-    "static/js/470.5964bac6.chunk.js": "/MoneyGuard/static/js/470.5964bac6.chunk.js",
+    "static/js/470.e9d20ae2.chunk.js": "/MoneyGuard/static/js/470.e9d20ae2.chunk.js",
     "static/css/842.346a53e1.chunk.css": "/MoneyGuard/static/css/842.346a53e1.chunk.css",
     "static/js/842.a20f5e6b.chunk.js": "/MoneyGuard/static/js/842.a20f5e6b.chunk.js",
     "static/css/19.6ff00968.chunk.css": "/MoneyGuard/static/css/19.6ff00968.chunk.css",
@@ -27,13 +27,10 @@
     "static/media/mobile-bg-2x.png": "/MoneyGuard/static/media/mobile-bg-2x.8ba14e0251da54a210e9.png",
     "static/media/desktop-bg.png": "/MoneyGuard/static/media/desktop-bg.bcf61a4c256cd1a95cf9.png",
     "static/media/statisticsPage-background-t.webp": "/MoneyGuard/static/media/statisticsPage-background-t.5d2aaa74484ab62ce0c8.webp",
+    "static/media/Poppins-Regular.ttf": "/MoneyGuard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/MoneyGuard/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/MoneyGuard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/mobile-bg.png": "/MoneyGuard/static/media/mobile-bg.692a69c2ffe35266ee15.png",
-    "static/media/Poppins-Regular.woff": "/MoneyGuard/static/media/Poppins-Regular.9b9d9585fc27c8fff554.woff",
-    "static/media/Poppins-Medium.woff": "/MoneyGuard/static/media/Poppins-Medium.26c20b0f1f2b2d0d7f4e.woff",
-    "static/media/Poppins-SemiBold.woff": "/MoneyGuard/static/media/Poppins-SemiBold.5159bcc22685da086734.woff",
-    "static/media/Poppins-Regular.woff2": "/MoneyGuard/static/media/Poppins-Regular.5a6c15af2151cfa27e76.woff2",
-    "static/media/Poppins-Medium.woff2": "/MoneyGuard/static/media/Poppins-Medium.a19883c1cd77faacd63d.woff2",
-    "static/media/Poppins-SemiBold.woff2": "/MoneyGuard/static/media/Poppins-SemiBold.810728e0001e1f7c0a71.woff2",
     "static/media/logo.svg": "/MoneyGuard/static/media/logo.d8e9d433ed0a75b73b5df5791ee7db18.svg",
     "index.html": "/MoneyGuard/index.html",
     "static/media/name.svg": "/MoneyGuard/static/media/name.5da49f379f2098122801949d307f3ee0.svg",
@@ -41,11 +38,11 @@
     "static/media/mail.svg": "/MoneyGuard/static/media/mail.43ef57eca22858084707860b0ce1f00d.svg",
     "static/media/plus.svg": "/MoneyGuard/static/media/plus.6194a661e88e1e5113d28da2398b6404.svg",
     "static/media/minus.svg": "/MoneyGuard/static/media/minus.c1930871236002c803c7b6a6c0b99024.svg",
-    "main.86d98e1d.css.map": "/MoneyGuard/static/css/main.86d98e1d.css.map",
-    "main.888d55cf.js.map": "/MoneyGuard/static/js/main.888d55cf.js.map",
+    "main.6c40bba1.css.map": "/MoneyGuard/static/css/main.6c40bba1.css.map",
+    "main.f518a2c2.js.map": "/MoneyGuard/static/js/main.f518a2c2.js.map",
     "309.df5c3557.chunk.js.map": "/MoneyGuard/static/js/309.df5c3557.chunk.js.map",
     "470.e891dc29.chunk.css.map": "/MoneyGuard/static/css/470.e891dc29.chunk.css.map",
-    "470.5964bac6.chunk.js.map": "/MoneyGuard/static/js/470.5964bac6.chunk.js.map",
+    "470.e9d20ae2.chunk.js.map": "/MoneyGuard/static/js/470.e9d20ae2.chunk.js.map",
     "842.346a53e1.chunk.css.map": "/MoneyGuard/static/css/842.346a53e1.chunk.css.map",
     "842.a20f5e6b.chunk.js.map": "/MoneyGuard/static/js/842.a20f5e6b.chunk.js.map",
     "19.6ff00968.chunk.css.map": "/MoneyGuard/static/css/19.6ff00968.chunk.css.map",
@@ -64,7 +61,7 @@
     "369.f04f1e69.chunk.js.map": "/MoneyGuard/static/js/369.f04f1e69.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.86d98e1d.css",
-    "static/js/main.888d55cf.js"
+    "static/css/main.6c40bba1.css",
+    "static/js/main.f518a2c2.js"
   ]
 }
