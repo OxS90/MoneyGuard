@@ -2,27 +2,29 @@ import styled from 'styled-components';
 import { IoExitOutline } from 'react-icons/io5';
 
 export const HeaderContainer = styled.header`
-  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
-    0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
-`;
-export const Div = styled.div`
-  max-width: 320px;
-  width: 100%;
+  width: 320px;
+  padding: 0;
+  background: transparent;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    max-width: 768px;
+    width: 768px;
   }
   @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+    width: 1280px;
   }
+`;
+export const Div = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
 `;
 
 export const HeaderDiv = styled(Div)`
   display: flex;
+  background: transparent;
   align-items: center;
   justify-content: space-between;
   height: 80px;
-
   max-width: 1280px;
 
   @media (max-width: 767px) {
