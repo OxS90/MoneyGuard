@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Wrap, StyledTable } from './CurrencyStyled';
-import { selectCurrency } from '../../../../redux/currency/selectors';
+// import { selectCurrency } from '../../../../redux/currency/selectors';
 import { fetchCurrency } from '../../../../redux/currency/operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 export const Currency = () => {
   const dispatch = useDispatch();
