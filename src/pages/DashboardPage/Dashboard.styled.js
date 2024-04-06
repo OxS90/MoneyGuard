@@ -37,7 +37,7 @@ export const DashboardContainer = styled.div`
   height: auto;
   max-width: 320px;
   flex-direction: column;
-
+ 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     max-width: 768px;
     flex-direction: column;

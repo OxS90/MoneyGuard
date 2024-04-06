@@ -125,13 +125,18 @@ export const ListTransaction = styled.tbody`
     max-height: 600px;
     overflow-y: scroll;
   }
+  @media only screen and (min-width: 1280px) {
+    overflow-y: scroll;
+  }
 `;
 
 export const TransactionCardList = styled.ul`
+  margin-top: 20px;
   padding: 0;
   max-width: max-content;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 10px;
   list-style: none;
   justify-content: center;
   align-items: center;
