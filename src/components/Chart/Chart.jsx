@@ -25,6 +25,7 @@ export function Chart() {
   const isMobile = useMediaQuery({ minWidth: 320 });
 
   let doughnutSize = 288;
+  
   if (isDesktop) {
     doughnutSize = 288;
   } else if (isTablet) {
