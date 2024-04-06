@@ -92,6 +92,7 @@ export const Box = styled.div`
   }
 `;
 
+
 export const Name = styled.p`
   color: rgba(255, 255, 255, 0.6);
   text-align: right;
@@ -121,13 +122,17 @@ export const ExitButton = styled.button`
   background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 50px;
+  justify-content: flex-start;
+  margin-left: 5px;
+  width: 20px;
   height: 100%;
   transition: all 400ms;
   padding: 0;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+  }
+  & > svg {
+    margin-right: 0;
   }
 
   @media screen and (max-width: 767px) {

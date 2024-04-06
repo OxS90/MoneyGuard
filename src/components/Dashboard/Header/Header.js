@@ -57,6 +57,7 @@ export const Header = () => {
             >
               <ExitOutline />
             </ExitButton>
+            <span style={{ color: 'rgba(255, 255, 255, 0.60)' }}>Exit</span>
           </Box>
         </HeaderDiv>
       </HeaderContainer>
