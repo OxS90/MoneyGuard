@@ -5,7 +5,6 @@ import { persistReducer } from 'redux-persist';
 
 const initialState = {
   data: null,
-  fetchingTime: null,
   isLoading: false,
   error: null,
 };
@@ -27,7 +26,6 @@ const currencySlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.data = action.payload.data;
-        state.fetchingTime = action.payload.fetchingTime;
       });
   },
 });

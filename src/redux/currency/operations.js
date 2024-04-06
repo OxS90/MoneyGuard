@@ -10,18 +10,9 @@ export const fetchCurrency = createAsyncThunk(
       const response = await axios.get(
         `https://openexchangerates.org/api/latest.json?app_id=${AppId}`
       );
-      const fetchedCurrency = {
-        USD: {
-          buy: response.data.rates.USD.buy,
-          sale: response.data.rates.USD.sell,
-        },
-        EUR: {
-          buy: response.data.rates.USD.buy,
-          sale: response.data.rates.USD.sell,
-        },
-      };
-      const fetchingTime = new Date().toString();
-      return { data: fetchedCurrency, fetchingTime };
+      console.log(response.data);
+      console.log(response.data.rates.EUR);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
