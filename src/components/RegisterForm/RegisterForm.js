@@ -54,11 +54,7 @@ const RegisterForm = () => {
     >
       {({ values, handleSubmit }) => (
         <div className={styles.FormWrapper}>
-          <form
-            onSubmit={handleSubmit}
-            autoComplete="off"
-            className={styles.Form}
-          >
+          <form onSubmit={handleSubmit} className={styles.Form}>
             <div className={styles.Logo}>
               <img
                 src={logo}
@@ -81,7 +77,6 @@ const RegisterForm = () => {
                 name="username"
                 type="text"
                 placeholder="Name"
-                autocomplete="username"
                 className={styles.InputField}
               />
               <div className={styles.error}>

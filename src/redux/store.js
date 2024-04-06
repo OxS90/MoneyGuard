@@ -10,7 +10,7 @@ import {
 } from 'redux-persist';
 
 import persistedAuthReducer from '../redux/authorisation/slice';
-import { statisticsReducer } from './statistics/slice';
+import { persistedStatisticsReducer } from '../redux/statistics/slice';
 import balanceReducer from './balance/balanceSlice';
 import persistedTransactionsReducer from './transactions/slice';
 import { modalReducer } from '../redux/modal/slice';
@@ -19,7 +19,7 @@ import { persistedCurrencyReducer } from '../redux/currency/slice';
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
-    statistics: statisticsReducer,
+    statistics: persistedStatisticsReducer,
     transactions: persistedTransactionsReducer,
     balance: balanceReducer,
     modal: modalReducer,

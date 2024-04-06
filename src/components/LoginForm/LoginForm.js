@@ -27,9 +27,7 @@ export const LoginForm = () => {
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
     >
-      {(
-        { handleSubmit } // Destructure handleSubmit from Formik
-      ) => (
+      {({ handleSubmit }) => (
         <div className={styles.FormWrapper}>
           <form
             onSubmit={handleSubmit}
