@@ -48,6 +48,7 @@ export const HeaderDiv = styled(Div)`
     padding: 0 16px;
     width: 100%;
     margin: 0 auto;
+    padding-left: 0;
   }
 `;
 
@@ -91,7 +92,6 @@ export const Box = styled.div`
     margin-left: auto;
   }
 `;
-
 
 export const Name = styled.p`
   color: rgba(255, 255, 255, 0.6);
