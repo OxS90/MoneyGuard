@@ -11,7 +11,7 @@ import {
 
 import persistedAuthReducer from '../redux/authorisation/slice';
 import { statisticsReducer } from './statistics/slice';
-import persistedBalanceReducer from './balance/balanceSlice';
+import balanceReducer from './balance/balanceSlice';
 import persistedTransactionsReducer from './transactions/slice';
 import { modalReducer } from '../redux/modal/slice';
 import { persistedCurrencyReducer } from '../redux/currency/slice';
@@ -21,7 +21,7 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     statistics: statisticsReducer,
     transactions: persistedTransactionsReducer,
-    balance: persistedBalanceReducer,
+    balance: balanceReducer,
     modal: modalReducer,
     currency: persistedCurrencyReducer,
   },
