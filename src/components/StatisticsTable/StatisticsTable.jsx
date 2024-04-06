@@ -34,7 +34,7 @@ const StatisticsTable = () => {
     : [];
 
   return (
-    <>
+    <section className={styles.tableContainer}>
       <div className={styles.category}>
         <p>Category</p>
         <p>Sum</p>
@@ -66,7 +66,7 @@ const StatisticsTable = () => {
         <h3>Income:</h3>
         <p>{formatNumber(summary.incomeSummary)}</p>
       </div>
-    </>
+    </section>
   );
 };
 
