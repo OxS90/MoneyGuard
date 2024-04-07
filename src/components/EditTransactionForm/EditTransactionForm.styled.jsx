@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
+export const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 export const Title = styled.h2`
   margin-bottom: 34px;
+  text-align: center;
   color: var(--white);
   font-size: 24px;
   font-weight: 400;
-  text-align: center;
 
   @media only screen and (min-width: 768px) {
     font-size: 30px;
@@ -25,10 +31,10 @@ export const Input = styled.input`
   padding-bottom: 8px;
   width: 280px;
   border: none;
-  border-bottom: 1px solid var(--transparency-40);
+  border-bottom: 1px solid var(--white-40);
   outline: none;
   background: transparent;
-  color: var(--white);
+  color: var(--white-60);
   font-size: 18px;
   font-family: 'Poppins-SemiBold', sans-serif;
 
@@ -38,7 +44,7 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    color: var(--transparency-60);
+    color: var(--white-60);
     @media only screen and (min-width: 768px) {
       transform: translateX(40%);
     }
@@ -56,14 +62,14 @@ export const CommentInputStyled = styled.input`
   font-family: 'Poppins-SemiBold', sans-serif;
   font-weight: 400;
   border: none;
-  border-bottom: 1px solid var(--transparency-40);
+  border-bottom: 1px solid var(--white-40);
   background-color: transparent;
   color: var(--white);
   outline: transparent;
   width: 280px;
 
   &::placeholder {
-    color: var(--transparency-60);
+    color: var(--white-60);
     font-size: 18px;
     font-weight: 400;
   }
@@ -84,9 +90,9 @@ export const WrapSumCalendar = styled.div`
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: baseline;
     gap: 32px;
     justify-content: center;
-    align-items: center;
   }
 
   @media only screen and (min-width: 768px) {
@@ -94,7 +100,7 @@ export const WrapSumCalendar = styled.div`
   }
 
   input::placeholder {
-    color: var(--transparency-60);
+    color: var(--white-60);
     text-align: start;
     font-size: 18px;
     font-family: 'Poppins-SemiBold', sans-serif;

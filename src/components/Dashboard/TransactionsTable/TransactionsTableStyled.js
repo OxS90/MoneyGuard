@@ -18,7 +18,7 @@ export const TransactionsTableStyled = styled.div`
 
   @media screen and (min-width: 1280px) {
     flex-direction: row;
-    max-width: 800px;
+    // max-width: 800px;
     width: 100%;
     padding-left: 0;
     margin-top: 0;

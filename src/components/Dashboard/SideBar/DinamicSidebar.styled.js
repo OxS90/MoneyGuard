@@ -30,6 +30,6 @@ export const SidebarStyled = styled.div`
     margin-top: 120px;
   }
   @media screen and (min-width: 1280px) {
-    margin-top: 35px;
+    margin-top: 15px;
   }
 `;

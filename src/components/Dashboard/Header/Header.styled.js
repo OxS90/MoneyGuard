@@ -7,8 +7,9 @@ export const Div = styled.div`
   background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
 `;
 export const HeaderContainer = styled.header`
+  max-width: 1280px;
   width: 100%;
-  padding: 0;
+  padding: 0 16px;
   background: transparent;
   display: flex;
   justify-content: center;

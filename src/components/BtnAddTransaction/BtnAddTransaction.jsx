@@ -1,4 +1,4 @@
-import { AddTransaction } from '../AddTransaction/AddTransaction';
+import { AddTransaction } from '../Modals/AddTransaction/AddTransaction';
 import React, { useState } from 'react';
 import { BtnOpenModal } from './BtnAddTransaction.styled';
 import { getTransactionsCategoriesThunk } from '../../redux/transactions/operations';

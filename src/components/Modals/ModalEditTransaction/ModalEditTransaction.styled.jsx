@@ -13,9 +13,10 @@ export const Backdrop = styled.div`
   z-index: 20;
 
   &::before {
-    background-color: rgba(34, 13, 91, 0.23);
+    background: var(--Form-color, rgba(255, 255, 255, 0.1));
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(50px);
     content: '';
-    backdrop-filter: blur(3.5px);
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -32,7 +33,9 @@ export const StyledModal = styled.div`
   align-items: center;
   width: 100%;
   padding: 40px 20px;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.25);
+  background: var(--Form-color, rgba(255, 255, 255, 0.1));
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
   overflow: hidden;
   height: 100%;
 
@@ -45,7 +48,7 @@ export const StyledModal = styled.div`
   }
 
   &::before {
-    background-color: var(--transparency-10);
+    background-color: var(--transp-10);
     content: '';
     backdrop-filter: blur(50px);
     position: absolute;
@@ -107,7 +110,7 @@ export const BtnCancel = styled.button`
   outline: none;
   padding: 13px 10px;
   font-size: 18px;
-  color: var(--button-text-color);
+  color: var(--text-button);
   box-shadow: 1px 9px 15px 0 rgba(0, 0, 0, 0.2);
   background-color: var(--white);
   text-align: center;

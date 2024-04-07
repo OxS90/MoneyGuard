@@ -10,7 +10,7 @@ import {
   CalendarContainer,
   CalendarIcon,
   DateWrapper,
-} from '../AddTransaction/Calendar.styled';
+} from '../Modals/AddTransaction/Calendar.styled';
 import ReactDatePicker from 'react-datepicker';
 import { date } from 'yup';
 import { BtnSubmit } from '../Modals/ModalEditTransaction/ModalEditTransaction.styled';
@@ -25,6 +25,7 @@ import {
   Title,
   TypeWrapper,
   WrapSumCalendar,
+  FormWrapper,
 } from './EditTransactionForm.styled';
 import { RxSlash } from 'react-icons/rx';
 // import { changeBalanceValue } from '../../redux/auth/slice';
@@ -74,7 +75,6 @@ export function EditTransactionForm({ closeModal, transaction }) {
     dispatch(updatedTransactionThunk({ id, transactionData }))
       .unwrap()
       .then(() => {
-        // dispatch(changeBalanceValue(Number(amount) - transactionData.amount));
         toast.success('Transaction successfully edited');
       })
       .catch(() => {
@@ -91,7 +91,7 @@ export function EditTransactionForm({ closeModal, transaction }) {
   }
 
   return (
-    <>
+    <FormWrapper>
       <Title>Edit transaction</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TypeWrapper>
@@ -146,6 +146,6 @@ export function EditTransactionForm({ closeModal, transaction }) {
         />
         <BtnSubmit type="submit">Save</BtnSubmit>
       </Form>
-    </>
+    </FormWrapper>
   );
 }

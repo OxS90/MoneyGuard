@@ -1,4 +1,4 @@
-import { INCOME_CODE } from '../../components/AddTransaction/AddTransaction';
+import { INCOME_CODE } from '../../components/Modals/AddTransaction/AddTransaction';
 import { createSelector } from '@reduxjs/toolkit';
 
 export function selectCategories(state) {

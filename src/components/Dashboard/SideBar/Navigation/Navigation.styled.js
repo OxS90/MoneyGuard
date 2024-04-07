@@ -11,6 +11,8 @@ export const StyledNavList = styled.ul`
   list-style: none;
 
   @media screen and (min-width: 768px) {
+    padding-left: 16px;
+    padding-bottom: 28px;
   }
 `;
 

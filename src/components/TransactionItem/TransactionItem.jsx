@@ -14,6 +14,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteTransactionThunk } from '../../redux/transactions/operations';
 import { selectCategories } from '../../redux/transactions/selectors';
 import { LuPencil } from 'react-icons/lu';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TransactionItem = ({ data, handleModal, setData }) => {
   const dispatch = useDispatch();
@@ -26,7 +28,11 @@ const TransactionItem = ({ data, handleModal, setData }) => {
     dispatch(deleteTransactionThunk(transactionId))
       .unwrap()
       .then(() => {
-        // dispatch(changeBalanceValue(amount));
+        toast.success('Transaction successfully deleted');
+      })
+      .catch(err => {
+        console.log(err);
+        toast.error('Something went wrong, try again');
       });
   };
 

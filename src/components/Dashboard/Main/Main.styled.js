@@ -15,7 +15,9 @@ export const MainStyled = styled.div`
     flex-direction: column;
   }
   @media screen and (min-width: 1280px) {
+    padding-top: 0;
     max-width: 1280px;
     flex-direction: row;
+    align-items: flex-start;
   }
 `;

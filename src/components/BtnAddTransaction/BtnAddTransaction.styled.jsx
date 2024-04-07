@@ -7,8 +7,8 @@ export const BtnOpenModal = styled.button`
   position: fixed;
   width: 44px;
   height: 44px;
-  bottom: 40px;
-  right: 20%;
+  bottom: 20px;
+  right: 20px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
