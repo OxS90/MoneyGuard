@@ -10,7 +10,6 @@ export const fetchCurrencyRates = createAsyncThunk(
       const response = await axios.get(
         `https://openexchangerates.org/api/latest.json?app_id=${AppId}`
       );
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

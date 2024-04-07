@@ -39,8 +39,41 @@ export const CurrencyChart = () => {
 
   useEffect(() => {
     if (rates) {
-      const labels = Object.keys(rates);
-      const data = Object.values(rates);
+      const importantCurrencies = [
+        'GBP',
+
+        'CZK',
+
+        'AUD',
+        'CAD',
+        'ZAR',
+        'CHF',
+        'CNH',
+        'HKD',
+        'BGN',
+        'NZD',
+      ];
+
+      const noisedRates = {};
+      importantCurrencies.forEach(currency => {
+        const rate = rates[currency];
+        const noise = (Math.random() - 0.5) * 0.1; // Adjust noise level as needed
+        noisedRates[currency] = rate + noise;
+      });
+
+      // Convert rates object to an array of objects [{ currency: 'USD', rate: 1.23 }, ...]
+      const ratesArray = Object.keys(noisedRates).map(currency => ({
+        currency,
+        rate: noisedRates[currency],
+      }));
+
+      // // Sort rates array by rate in descending order
+      // ratesArray.sort((a, b) => b.rate - a.rate);
+
+      // Extract labels and data for the chart
+      const labels = ratesArray.map(currency => currency.currency);
+      const data = ratesArray.map(currency => currency.rate);
+
       setCurrencyLabels(labels);
       setCurrencyData(data);
     }
@@ -59,10 +92,58 @@ export const CurrencyChart = () => {
     ],
   };
 
+  const maxYAxisValue = Math.max(...currencyData) * 1.1; // Adjust the multiplier as needed for desired height
+
+  const chartOptions = {
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Currency',
+        },
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Rate',
+        },
+        max: maxYAxisValue, // Set the maximum value for the y-axis
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Top Currencies Exchange Rates',
+      },
+      legend: {
+        display: true,
+        position: 'bottom',
+      },
+      tooltip: {
+        enabled: true,
+        mode: 'index',
+        intersect: false,
+      },
+    },
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    elements: {
+      line: {
+        tension: 0.4, // Adjust tension for smoother lines
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false, // Ensure responsiveness
+  };
+
   return (
     <Wrap>
       <Graph>
-        <Line data={chartData} />
+        <Line data={chartData} options={chartOptions} />
       </Graph>
     </Wrap>
   );

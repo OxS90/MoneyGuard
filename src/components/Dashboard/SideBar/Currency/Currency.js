@@ -26,7 +26,7 @@ export const Currency = () => {
         </thead>
         <tbody>
           <tr>
-            <td>USD</td>
+            <td>RON</td>
             <td>{rates && rates['RON']}</td>
             <td>{rates && rates['RON']}</td>
           </tr>
