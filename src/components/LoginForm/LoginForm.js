@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/authorisation/operations';
-import { selectUsername } from '../../redux/authorisation/selectors';
 import { Formik, Field, ErrorMessage } from 'formik';
 import styles from './LoginForm.module.css';
 import * as Yup from 'yup';
@@ -8,7 +7,6 @@ import logo from '../../assets/icons/logo.svg';
 import CustomButton from '../CustomElements/CustomButton/CustomButton';
 import mail from '../../assets/icons/mail.svg';
 import lock from '../../assets/icons/lock.svg';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ValidationSchema = Yup.object().shape({

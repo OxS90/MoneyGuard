@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Wrap, StyledTable, Graph } from './CurrencyStyled';
+import React, { useEffect } from 'react';
+// import { useState } from 'react';
+import { Wrap } from './CurrencyStyled';
+// import { Graph, StyledTable } from './CurrencyStyled';
 import { selectCurrencyRates } from '../../../../redux/currency/selectors';
 import { fetchCurrencyRates } from '../../../../redux/currency/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 
 export const Currency = () => {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import Balance from '../SideBar/Balance/Balance';
 import { Currency } from '../SideBar/Currency/Currency';
 import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { CurrencyChart } from './Currency/Chart';
+// import { CurrencyChart } from './Currency/Chart';
 
 export const DinamicSidebar = () => {
   const location = useLocation();
