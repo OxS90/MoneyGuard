@@ -5,7 +5,6 @@ import { updatedTransactionThunk } from '../../redux/transactions/operations';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import {
   CalendarContainer,
   CalendarIcon,
@@ -28,7 +27,6 @@ import {
   FormWrapper,
 } from './EditTransactionForm.styled';
 import { RxSlash } from 'react-icons/rx';
-// import { changeBalanceValue } from '../../redux/auth/slice';
 
 const schema = yup
   .object({
@@ -72,14 +70,7 @@ export function EditTransactionForm({ closeModal, transaction }) {
       isExpense && newValue > 0 ? -newValue : newValue
     );
     transactionData.transactionDate = getFormattedDate();
-    dispatch(updatedTransactionThunk({ id, transactionData }))
-      .unwrap()
-      .then(() => {
-        toast.success('Transaction successfully edited');
-      })
-      .catch(() => {
-        toast.error('Something went wrong, try again');
-      });
+    dispatch(updatedTransactionThunk({ id, transactionData }));
     closeModal(false);
   }
 

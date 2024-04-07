@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import { api, setToken } from '../../configAxios/api';
 
 export const fetchTransSumThunk = createAsyncThunk(
@@ -19,6 +20,23 @@ export const fetchTransSumThunk = createAsyncThunk(
       });
       return data;
     } catch (error) {
+      const { status } = error.response;
+      if (status === 400) {
+        toast.error('Validation error. Please check your input!', {
+          position: 'top-right',
+          autoClose: 5000,
+        });
+      } else if (status === 401) {
+        toast.error('User is not authorized!', {
+          position: 'top-right',
+          autoClose: 5000,
+        });
+      } else {
+        toast.error('Error fetching transaction summary!', {
+          position: 'top-right',
+          autoClose: 5000,
+        });
+      }
       return thunkApi.rejectWithValue(error.message);
     }
   }

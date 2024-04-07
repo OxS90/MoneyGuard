@@ -7,8 +7,6 @@ import * as yup from 'yup';
 import { date } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, Controller } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from 'react-responsive';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -133,15 +131,7 @@ export const AddTransaction = ({ closeModal }) => {
       ? formData.category
       : INCOME_CODE;
     transaction.transactionDate = transformDate(startDate);
-    dispatch(addTransactionThunk(transaction))
-      .unwrap()
-      .then(() => {
-        toast.success('Transaction successfully added');
-      })
-      .catch(err => {
-        console.log(err);
-        toast.error('Something went wrong, try again');
-      });
+    dispatch(addTransactionThunk(transaction)).unwrap();
     closeModal();
   }
 
