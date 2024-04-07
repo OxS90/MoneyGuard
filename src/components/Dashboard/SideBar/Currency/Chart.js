@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Wrap, StyledTable, Graph } from './CurrencyStyled';
+import { Wrap, Graph } from './CurrencyStyled';
+// import { StyledTable } from './CurrencyStyled';
 import { selectCurrencyRates } from '../../../../redux/currency/selectors';
 import { fetchCurrencyRates } from '../../../../redux/currency/operations';
 import { useDispatch } from 'react-redux';
