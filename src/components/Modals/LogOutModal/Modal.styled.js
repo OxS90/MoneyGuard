@@ -65,8 +65,9 @@ export const CancelBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
+  margin-top: 20px;
   padding: 13px 68px;
   background-color: rgba(251, 251, 251, 1);
   border-radius: 20px;
@@ -78,4 +79,12 @@ export const CancelBtn = styled.button`
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
+  &:hover {
+    background-color: rgba(98, 63, 139, 1);
+    color: rgba(251, 251, 251, 1);
+  }
 `;

@@ -1,28 +1,16 @@
-/**
-  |============================
-  | Mobile
-  |============================
-*/
-
 import styled from 'styled-components';
 
 export const Card = styled.li`
-  width: 280px;
+  width: 320px;
   height: 293px;
-
   position: relative;
-
   border-radius: 10px;
   background: rgba(82, 59, 126, 0.6);
-
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(50px);
-
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
-
   display: block;
 
   @media (min-width: 768px) {
@@ -33,7 +21,6 @@ export const Card = styled.li`
 export const CardLine = styled.div`
   padding: 12px 20px 12px 15px;
   height: 48px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

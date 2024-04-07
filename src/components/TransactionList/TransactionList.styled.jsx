@@ -6,15 +6,14 @@ export const HomeTab = styled.table`
   display: none;
 
   @media only screen and (min-width: 768px) {
-    width: 704px;
+    width: 99%;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
   @media only screen and (min-width: 1280px) {
-    width: 715px;
-    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -127,6 +126,17 @@ export const ListTransaction = styled.tbody`
   }
   @media only screen and (min-width: 1280px) {
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
   }
 `;
 
@@ -140,8 +150,7 @@ export const TransactionCardList = styled.ul`
   list-style: none;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
-
+ 
   @media only screen and (min-width: 768px) {
     display: none;
   }

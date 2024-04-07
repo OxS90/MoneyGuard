@@ -5,41 +5,41 @@ export const Div = styled.div`
   display: flex;
   justify-content: center;
   background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
-  box-shadow: 0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset,
-    0px 4px 40px 0px rgba(0, 0, 0, 0.25);
 `;
 export const HeaderContainer = styled.header`
   width: 100%;
-
   padding: 0;
   background: transparent;
+  display: flex;
+  justify-content: center;
 `;
 
 export const HeaderDiv = styled(Div)`
-  max-width: 1280px;
+  width: 320px;
   display: flex;
   background: transparent;
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  padding: 0 20px;
+
   @media (min-width: 768px) {
-    width: 100%;
+    width: 768px;
     padding: 0 28px;
     height: 80px;
   }
 
   @media screen and (min-width: 768px) {
     padding: 0 32px;
-    width: 100%;
+    width: 768px;
     height: 80px;
     margin: 0 auto;
     justify-content: space-between;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 0 16px 0 16px;
-    padding-left: 0;
+    padding: 0;
+
+    width: 1280px;
   }
 `;
 
@@ -56,9 +56,6 @@ export const LogoBox = styled.button`
     transform: scale(1.1);
   }
   margin-right: auto;
-  @media (min-width: 1280px) {
-    padding-left: 16px;
-  }
 `;
 
 export const Logo = styled.img`
