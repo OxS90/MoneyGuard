@@ -18,6 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  max-width: 1280px;
+  max-height: 100vh;
 }
 h1,h2,h3 {
   margin: 0;

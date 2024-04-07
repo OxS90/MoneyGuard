@@ -31,8 +31,10 @@ export const BtnOpenModal = styled.button`
   }
 
   @media only screen and (min-width: 768px) {
-    bottom: 100px;
     right: 40px;
     bottom: 40px;
+  }
+  @media only screen and (min-width: 1024px) {
+    right: 90px;
   }
 `;

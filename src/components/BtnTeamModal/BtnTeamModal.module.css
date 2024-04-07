@@ -6,7 +6,7 @@
   width: 44px;
   height: 44px;
   bottom: 20px;
-  left: 20px;
+  right: 65px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -17,7 +17,7 @@
     #7000ff 150.71%
   );
   cursor: pointer;
-  z-index: 10;
+  z-index: 9;
   align-self: flex-end;
 }
 
@@ -32,7 +32,8 @@
 
 @media only screen and (min-width: 768px) {
   .btnOpenModal {
-    bottom: 100px;
+    bottom: 40px;
+    right: 135px;
     margin-left: 12px;
     /* left: 40px; */
   }
@@ -40,8 +41,6 @@
 
 @media only screen and (min-width: 1280px) {
   .btnOpenModal {
-    bottom: 50px;
     margin-left: 0;
-    left: 140px;
   }
 }
