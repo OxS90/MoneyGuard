@@ -5,13 +5,13 @@ export const TransactionsTableStyled = styled.div`
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  max-width: 320px;
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     max-width: 768px;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
     justify-content: center;
   }
 
@@ -19,6 +19,5 @@ export const TransactionsTableStyled = styled.div`
     flex-direction: row;
     max-width: 800px;
     width: 100%;
-    margin-right: auto;
   }
 `;

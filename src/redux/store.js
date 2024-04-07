@@ -14,7 +14,7 @@ import { persistedStatisticsReducer } from '../redux/statistics/slice';
 import balanceReducer from './balance/balanceSlice';
 import persistedTransactionsReducer from './transactions/slice';
 import { modalReducer } from '../redux/modal/slice';
-import { persistedCurrencyReducer } from '../redux/currency/slice';
+import { currencyReducer } from '../redux/currency/slice';
 
 export const store = configureStore({
   reducer: {
@@ -23,7 +23,7 @@ export const store = configureStore({
     transactions: persistedTransactionsReducer,
     balance: balanceReducer,
     modal: modalReducer,
-    currency: persistedCurrencyReducer,
+    currency: currencyReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

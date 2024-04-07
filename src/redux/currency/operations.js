@@ -2,16 +2,15 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const AppId = 'b62eb79a7add427d819f49f3ce24b362';
+const date = '2024-04-01';
 
-export const fetchCurrency = createAsyncThunk(
+export const fetchCurrencyRates = createAsyncThunk(
   'currency/fetchCurrency',
   async (_, thunkAPI) => {
     try {
       const response = await axios.get(
         `https://openexchangerates.org/api/latest.json?app_id=${AppId}`
       );
-      console.log(response.data);
-      console.log(response.data.rates.EUR);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

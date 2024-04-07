@@ -1,17 +1,50 @@
-import React, { useEffect } from 'react';
-import { Wrap, StyledTable } from './CurrencyStyled';
-// import { selectCurrency } from '../../../../redux/currency/selectors';
-import { fetchCurrency } from '../../../../redux/currency/operations';
-import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { Wrap, StyledTable, Graph } from './CurrencyStyled';
+import { selectCurrencyRates } from '../../../../redux/currency/selectors';
+import { fetchCurrencyRates } from '../../../../redux/currency/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { Line } from 'react-chartjs-2';
 
 export const Currency = () => {
   const dispatch = useDispatch();
-  // const currency = useSelector(selectCurrency);
+  const rates = useSelector(selectCurrencyRates);
 
   useEffect(() => {
-    dispatch(fetchCurrency());
+    dispatch(fetchCurrencyRates());
   }, [dispatch]);
+
+  // Prepare data for chart
+  // const [currencyLabels, setCurrencyLabels] = useState([]);
+  // const [currencyData, setCurrencyData] = useState([]);
+
+  // useEffect(() => {
+  //   if (rates) {
+  //     const labels = Object.keys(rates);
+  //     const data = Object.values(rates);
+  //     setCurrencyLabels(labels);
+  //     setCurrencyData(data);
+  //   }
+  // }, [rates]);
+
+  // Filtered data for table
+  // const filteredCurrencyLabels = ['EUR', 'RON'];
+  // const filteredCurrencyData = filteredCurrencyLabels.map(
+  //   currency => rates && rates[currency]
+  // );
+
+  // Chart data
+  // const chartData = {
+  //   labels: currencyLabels,
+  //   datasets: [
+  //     {
+  //       label: 'Currency Rates',
+  //       data: currencyData,
+  //       fill: false,
+  //       backgroundColor: 'rgba(75,192,192,0.4)',
+  //       borderColor: 'rgba(75,192,192,1)',
+  //     },
+  //   ],
+  // };
 
   return (
     <Wrap>
@@ -26,17 +59,28 @@ export const Currency = () => {
         <tbody>
           <tr>
             <td>USD</td>
-            {/* <td>{currency.rates.USD ? currency.rates.USD.toFixed(2) : '-'}</td>
-            <td>{currency.rates.USD ? currency.rates.USD.toFixed(2) : '-'}</td> */}
+            <td>{rates && rates['RON']}</td>
+            <td>{rates && rates['RON']}</td>
           </tr>
           <tr>
             <td>EUR</td>
-            {/* <td>{currency.rates.EUR ? currency.EUR.toFixed(2) : '-'}</td>
-            <td>{currency.rates.EUR ? currency.EUR.toFixed(2) : '-'}</td> */}
+            <td>{rates && rates['EUR']}</td>
+            <td>{rates && rates['EUR']}</td>
           </tr>
         </tbody>
+        {/* <tbody>
+          {filteredCurrencyLabels.map((currency, index) => (
+            <tr key={index}>
+              <td>{currency}</td>
+              <td>{filteredCurrencyData[currency]}</td>
+              <td>{filteredCurrencyData[currency]}</td>
+            </tr>
+          ))}
+        </tbody> */}
       </StyledTable>
-      {/* <Graph /> */}
+      {/* <Graph>
+        <Line data={chartData} />
+      </Graph> */}
     </Wrap>
   );
 };

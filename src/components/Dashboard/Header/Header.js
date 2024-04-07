@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toggleLogOutModal } from '../../../redux/modal/slice';
 import Modal from '../../Modals/LogOutModal/Modal';
 import Logout from '../../Logout/Logout';
+import exit from '../../../assets/icons/exit.svg';
 import {
   Div,
   HeaderDiv,
@@ -15,6 +16,7 @@ import {
   LogoName,
   Name,
   Stick,
+  ExitText,
 } from './Header.styled';
 import logo from '../../../assets/icons/logo.svg';
 import { selectUser } from '../../../redux/authorisation/selectors';
@@ -55,9 +57,9 @@ export const Header = () => {
               type="button"
               onClick={() => dispatch(toggleLogOutModal())}
             >
-              <ExitOutline />
+              <ExitOutline src={exit} alt="exit" />
             </ExitButton>
-            <span style={{ color: 'rgba(255, 255, 255, 0.60)' }}>Exit</span>
+            <ExitText>Exit</ExitText>
           </Box>
         </HeaderDiv>
       </HeaderContainer>

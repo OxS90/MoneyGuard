@@ -1,16 +1,17 @@
-import 'react-datepicker/dist/react-datepicker.css';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilteredCategories } from '../../redux/transactions/selectors';
 import { components } from 'react-select';
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { date } from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, Controller } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from 'react-responsive';
 import ReactDatePicker from 'react-datepicker';
-import { date } from 'yup';
+import 'react-datepicker/dist/react-datepicker.css';
 import { Header } from '../../components/Dashboard/Header/Header';
 import {
   CloseBtn,

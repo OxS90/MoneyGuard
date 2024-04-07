@@ -1,2 +1,3 @@
-export const selectCurrency = state => state.currency.data;
-export const selectIsLoading = state => state.auth.isLoading;
+export const selectCurrencyRates = state => state.currency.rates;
+export const selectCurrencyRatesLoading = state => state.currency.isLoading;
+export const selectCurrencyRatesError = state => state.currency.error;

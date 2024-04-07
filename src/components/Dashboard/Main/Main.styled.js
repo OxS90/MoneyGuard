@@ -5,13 +5,14 @@ export const MainStyled = styled.div`
   height: auto;
   display: flex;
   flex-grow: 1;
-  max-width: 320px;
+  padding-top: 12px;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-top: 0;
     flex-direction: column;
-    max-width: 769px;
   }
   @media screen and (min-width: 1280px) {
     max-width: 1280px;

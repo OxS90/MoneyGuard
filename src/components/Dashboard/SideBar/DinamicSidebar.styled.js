@@ -3,21 +3,23 @@ import styled from 'styled-components';
 export const DinamicSidebarStyled = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 320px;
   width: 100%;
   align-items: center;
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    height: 214px;
+  @media screen and (min-width: 768px) {
     flex-direction: row;
-    max-width: 768px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 32px;
+    gap: 32px;
   }
   @media screen and (min-width: 1280px) {
-    max-width: 480px;
-    align-items: unset;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
     border-right: 1px solid rgba(255, 255, 255, 0.6);
   }
+`;
+export const SidebarStyled = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

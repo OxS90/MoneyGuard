@@ -9,7 +9,7 @@ import lock from '../../assets/icons/lock.svg';
 import name from '../../assets/icons/name.svg';
 import ProgressBar from './ProgressBar';
 import CustomButton from '../CustomElements/CustomButton/CustomButton';
-import styles from '../LoginForm/LoginForm.module.css';
+import styles from './RegisterForm.module.css';
 
 const ValidationSchema = Yup.object().shape({
   username: Yup.string()
@@ -58,9 +58,8 @@ const RegisterForm = () => {
             <div className={styles.Logo}>
               <img
                 src={logo}
+                className={styles.LogoIcon}
                 alt="Logo MoneyGuard"
-                width="25.461px"
-                height="25.461px"
                 draggable="false"
               />
               <h3 className={styles.LogoText}>MoneyGuard</h3>
@@ -129,7 +128,7 @@ const RegisterForm = () => {
               </div>
             </label>
             <div className={styles.InputWrapper}>
-              <label className={styles.Input}>
+              <label className={`${styles.Input} ${styles.LastChild}`}>
                 <img
                   src={lock}
                   alt="lock"
@@ -149,12 +148,7 @@ const RegisterForm = () => {
                   <ErrorMessage name="passwordConfirm" component="div" />
                 </div>
               </label>
-              <div className={styles.ProgressBarWrapper}>
-                <ProgressBar
-                  password={password}
-                  className={styles.ProgressBar}
-                />
-              </div>
+              <ProgressBar password={password} className={styles.ProgressBar} />
             </div>
 
             <CustomButton type="submit">Register</CustomButton>

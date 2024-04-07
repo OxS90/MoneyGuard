@@ -11,6 +11,8 @@ import NotFoundPage from 'pages/NotFoundPage';
 import { SpinnerLoader } from './Spinner/Spinner';
 import { useMediaQuery } from 'react-responsive';
 import { ToastContainer } from 'react-toastify';
+import GlobalStyles from '../styles/globalStyles';
+import 'react-toastify/dist/ReactToastify.css';
 const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
@@ -87,8 +89,9 @@ const App = () => {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <ToastContainer />
       </Suspense>
+      <ToastContainer />
+      <GlobalStyles />
     </>
   );
 };
