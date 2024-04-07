@@ -41,9 +41,7 @@ export const CurrencyChart = () => {
     if (rates) {
       const importantCurrencies = [
         'GBP',
-
         'CZK',
-
         'AUD',
         'CAD',
         'ZAR',

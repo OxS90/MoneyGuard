@@ -6,12 +6,12 @@ import Select from 'react-select';
 export const Backdrop = styled.div`
   position: fixed;
   flex-direction: column;
+  align-items: space-between;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
   z-index: 10;
 
   &::before {
@@ -37,6 +37,7 @@ export const Modal = styled.div`
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   height: 100%;
+  justify-content: space-around;
 
   @media only screen and (min-width: 768px) {
     position: absolute;
@@ -45,6 +46,8 @@ export const Modal = styled.div`
     padding: 40px 73px;
     border-radius: 8px;
     height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &::before {
     background-color: var(--transparency-10);
@@ -273,6 +276,7 @@ export const CloseModalBtn = styled.button`
   background-color: transparent;
   color: var(--white);
   transition: color 250ms ease-in-out;
+  cursor: pointer;
   @media only screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -280,7 +284,7 @@ export const CloseModalBtn = styled.button`
   }
   &:hover,
   &:focus {
-    color: var(--icon-violet);
+    scale: 1.2;
   }
 `;
 

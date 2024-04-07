@@ -37,6 +37,7 @@ export const Text = styled.p`
   line-height: 1.5;
   color: #ffffff;
   margin-bottom: 52px;
+  text-align: center;
 `;
 export const CancelBtn = styled.button`
   display: flex;

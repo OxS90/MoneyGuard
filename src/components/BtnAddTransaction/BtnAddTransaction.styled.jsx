@@ -7,8 +7,8 @@ export const BtnOpenModal = styled.button`
   position: fixed;
   width: 44px;
   height: 44px;
-  bottom: 20px;
-  right: 20px;
+  bottom: 40px;
+  right: 20%;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -20,7 +20,6 @@ export const BtnOpenModal = styled.button`
   );
   cursor: pointer;
   z-index: 10;
-  align-self: flex-end;
 
   &:hover {
     background: linear-gradient(

@@ -38,7 +38,7 @@ export const CalendarIcon = styled(FiCalendar)`
   right: 17px;
   width: 24px;
   height: 24px;
-  color: var(--icon-violet);
+  color: #fff;
 
   pointer-events: none;
   @media only screen and (min-width: 768px) {

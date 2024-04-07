@@ -74,7 +74,7 @@ export const CloseModalBtn = styled.button`
   outline: transparent;
   background-color: transparent;
   color: var(--white);
-
+  cursor: pointer;
   transition: color 250ms ease-in-out;
 
   @media only screen and (min-width: 768px) {
@@ -85,7 +85,7 @@ export const CloseModalBtn = styled.button`
 
   &:hover,
   &:focus {
-    color: var(--icon-violet);
+    scale: 1.2;
   }
 `;
 
