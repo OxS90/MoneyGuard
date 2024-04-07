@@ -8,6 +8,7 @@ export const BtnOpenModal = styled.button`
   width: 44px;
   height: 44px;
   bottom: 20px;
+  right: 20px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -19,7 +20,6 @@ export const BtnOpenModal = styled.button`
   );
   cursor: pointer;
   z-index: 10;
-  align-self: flex-end;
 
   &:hover {
     background: linear-gradient(
@@ -32,11 +32,7 @@ export const BtnOpenModal = styled.button`
 
   @media only screen and (min-width: 768px) {
     bottom: 100px;
-    margin-right: 12px;
-  }
-
-  @media only screen and (min-width: 1280px) {
-    bottom: 50px;
-    margin-right: 0;
+    right: 40px;
+    bottom: 40px;
   }
 `;

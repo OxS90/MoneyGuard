@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { ModalWindow, Overlay, ButtonClose, CancelBtn } from './Modal.styled';
 import { useDispatch } from 'react-redux';
 import { toggleModal } from '../../../redux/modal/slice';
+import { Gradient } from './Modal.styled';
 
 export default function Modal({ children, showCloseIcon = true }) {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ export default function Modal({ children, showCloseIcon = true }) {
   return (
     <Overlay onClick={handleBackdropClick}>
       <ModalWindow>
+        <Gradient />
         {showCloseIcon && (
           <ButtonClose type="button" name="closeSvg" onClick={closeClick}>
             <svg

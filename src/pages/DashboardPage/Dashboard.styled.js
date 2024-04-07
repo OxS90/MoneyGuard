@@ -7,6 +7,7 @@ export const DashboardStyled = styled.div`
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
+  padding-bottom: 40px;
 
   background: radial-gradient(
       circle at 9% 90%,
@@ -40,6 +41,7 @@ export const DashboardContainer = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     max-width: 768px;
+    padding: 0 20px;
     flex-direction: column;
   }
   @media screen and (min-width: 1280px) {

@@ -23,11 +23,7 @@ const TransactionItem = ({ data, handleModal, setData }) => {
   const categories = useSelector(selectCategories);
 
   const handleDelete = (transactionId, amount) => {
-    dispatch(deleteTransactionThunk(transactionId))
-      .unwrap()
-      .then(() => {
-        // dispatch(changeBalanceValue(amount));
-      });
+    dispatch(deleteTransactionThunk(transactionId));
   };
 
   function formatNumber(number) {

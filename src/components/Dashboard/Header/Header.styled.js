@@ -1,51 +1,46 @@
 import styled from 'styled-components';
-import { IoExitOutline } from 'react-icons/io5';
 
-export const HeaderContainer = styled.header`
-  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
-    0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
-`;
 export const Div = styled.div`
-  max-width: 320px;
   width: 100%;
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    max-width: 768px;
-  }
-  @media screen and (min-width: 1280px) {
-    max-width: 1280px;
-  }
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
+`;
+export const HeaderContainer = styled.header`
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 16px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
 `;
 
 export const HeaderDiv = styled(Div)`
+  width: 320px;
   display: flex;
+  background: transparent;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
 
-  max-width: 1280px;
-
-  @media (max-width: 767px) {
-    width: 100%;
-    padding: 0 20px;
-    height: 60px;
+  @media (min-width: 768px) {
+    width: 768px;
+    padding: 0 28px;
+    height: 80px;
   }
 
-  @media screen and (min-width: 320px) {
-    width: 100%;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1279.5px) {
+  @media screen and (min-width: 768px) {
     padding: 0 32px;
-    width: 100%;
+    width: 768px;
+    height: 80px;
     margin: 0 auto;
     justify-content: space-between;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 0 16px;
-    width: 100%;
-    margin: 0 auto;
+    padding: 0;
+
+    width: 1280px;
   }
 `;
 
@@ -54,29 +49,31 @@ export const LogoBox = styled.button`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0);
+  background: transparent;
   border: none;
   cursor: pointer;
   transition: all 400ms;
   &:hover {
     transform: scale(1.1);
   }
-
-  @media (max-width: 767px) {
-    padding: 12px 0;
-    margin-right: auto;
-  }
+  margin-right: auto;
 `;
 
 export const Logo = styled.img`
-  width: 17px;
-  height: 21px;
-  margin-bottom: 3px;
+  width: 17.106px;
+  height: 17.106px;
+  @media (min-width: 768px) {
+    width: 23.489px;
+    height: 22.468px;
+  }
 `;
 
 export const LogoName = styled.span`
-  color: #fbfbfb;
-  font-size: 12px;
+  color: var(--white);
+  font-size: 12.84px;
+  @media (min-width: 768px) {
+    font-size: 17.097px;
+  }
 `;
 
 export const Box = styled.div`
@@ -91,23 +88,19 @@ export const Box = styled.div`
 `;
 
 export const Name = styled.p`
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white-60);
   text-align: right;
   font-size: 16px;
   margin: 0;
-  margin-right: 12px;
-
-  @media (max-width: 767px) {
-    margin-right: 8px;
-  }
+  margin-right: 8px;
 `;
 
 export const Stick = styled.div`
   height: 30px;
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--white-60);
   margin-right: 12px;
-
+  margin-left: 4px;
   @media (max-width: 767px) {
     display: none;
   }
@@ -120,12 +113,11 @@ export const ExitButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50px;
-  height: 100%;
   transition: all 400ms;
+  margin-left: 0;
   padding: 0;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 
   @media screen and (max-width: 767px) {
@@ -135,24 +127,19 @@ export const ExitButton = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 50px;
+    width: 26px;
   }
 `;
 
-export const ExitOutline = styled(IoExitOutline)`
+export const ExitOutline = styled.img`
   width: 18px;
   height: 18px;
-  stroke: rgba(255, 255, 255, 0.6);
-
-  @media screen and (min-width: 768px) {
-    margin-right: 8px;
-  }
+  padding: 0;
 `;
-
 export const ExitText = styled.p`
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white-60);
   text-align: right;
-  @media (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;

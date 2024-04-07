@@ -30,6 +30,9 @@ export const LogoTitle = styled.h3`
   font-size: 27px;
   font-weight: 400;
   line-height: 1.5;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Text = styled.p`
@@ -37,6 +40,7 @@ export const Text = styled.p`
   line-height: 1.5;
   color: #ffffff;
   margin-bottom: 52px;
+  text-align: center;
 `;
 export const CancelBtn = styled.button`
   display: flex;
@@ -54,4 +58,9 @@ export const CancelBtn = styled.button`
   text-transform: uppercase;
   letter-spacing: 1.8px;
   cursor: pointer;
+`;
+export const Logo = styled.img`
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;

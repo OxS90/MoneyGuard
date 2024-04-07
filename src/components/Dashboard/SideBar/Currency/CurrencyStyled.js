@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
 export const Graph = styled.div`
+  display: block;
   position: relative;
   background: rgba(74, 86, 226, 0.1);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  height: 350px;
+  width: 100%;
+  padding: 0 10px;
   img {
     width: 100%;
   }
-
+  @media screen and (min-width: 768px) {
+    height: 250px;
+  }
   @media screen and (min-width: 1280px) {
-    padding-top: 40px;
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
   }

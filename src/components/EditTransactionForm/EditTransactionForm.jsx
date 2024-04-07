@@ -5,12 +5,11 @@ import { updatedTransactionThunk } from '../../redux/transactions/operations';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import {
   CalendarContainer,
   CalendarIcon,
   DateWrapper,
-} from '../AddTransaction/Calendar.styled';
+} from '../Modals/AddTransaction/Calendar.styled';
 import ReactDatePicker from 'react-datepicker';
 import { date } from 'yup';
 import { BtnSubmit } from '../Modals/ModalEditTransaction/ModalEditTransaction.styled';
@@ -25,9 +24,9 @@ import {
   Title,
   TypeWrapper,
   WrapSumCalendar,
+  FormWrapper,
 } from './EditTransactionForm.styled';
 import { RxSlash } from 'react-icons/rx';
-// import { changeBalanceValue } from '../../redux/auth/slice';
 
 const schema = yup
   .object({
@@ -71,15 +70,7 @@ export function EditTransactionForm({ closeModal, transaction }) {
       isExpense && newValue > 0 ? -newValue : newValue
     );
     transactionData.transactionDate = getFormattedDate();
-    dispatch(updatedTransactionThunk({ id, transactionData }))
-      .unwrap()
-      .then(() => {
-        // dispatch(changeBalanceValue(Number(amount) - transactionData.amount));
-        toast.success('Transaction successfully edited');
-      })
-      .catch(() => {
-        toast.error('Something went wrong, try again');
-      });
+    dispatch(updatedTransactionThunk({ id, transactionData }));
     closeModal(false);
   }
 
@@ -91,7 +82,7 @@ export function EditTransactionForm({ closeModal, transaction }) {
   }
 
   return (
-    <>
+    <FormWrapper>
       <Title>Edit transaction</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TypeWrapper>
@@ -146,6 +137,6 @@ export function EditTransactionForm({ closeModal, transaction }) {
         />
         <BtnSubmit type="submit">Save</BtnSubmit>
       </Form>
-    </>
+    </FormWrapper>
   );
 }

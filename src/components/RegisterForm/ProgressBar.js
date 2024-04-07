@@ -33,7 +33,6 @@ const ProgressBar = ({ password }) => {
   return (
     <div>
       <PasswordStrengthBar
-        // className={style.ProgressBar}
         password={password}
         score={strength}
         scoreWords={scoreWords}

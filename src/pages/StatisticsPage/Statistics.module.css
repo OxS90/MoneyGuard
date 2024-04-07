@@ -4,34 +4,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../../assets/statisticsPage-background-t.webp');
-  background-size: cover;
-  background-position: center;
+  background: transparent;
+  padding: 20px 0;
 }
 
 h2 {
   color: #fbfbfb;
   font-size: 30px;
   font-weight: 400;
-  text-align: left;
+  align-self: flex-start;
+  margin-left: 25px;
+  margin-bottom: 8px;
 }
-
-@media only screen and (min-width: 768px) {
-  h2 {
-    font-style: 30px;
-    padding-bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .container {
-    padding: 32px 0 46px 69px;
-  }
-  h2 {
-    padding: 0 0 20px 15px;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -40,23 +24,60 @@ h2 {
   width: 320px;
 }
 
-@media only screen and (min-width: 768px) {
-  .content {
-    flex-direction: row;
-    width: 100%;
-    padding: 20px;
-  }
-}
-
 .table {
   display: flex;
   flex-direction: column;
   width: 80%;
+  align-items: center;
+  width: 320px;
+  padding: 0 20px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0;
+  }
+  .content {
+    flex-direction: row;
+    width: 100%;
+    padding: 0 32px;
+    align-items: flex-start;
+  }
+  h2 {
+    margin-left: 32px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .table {
+    width: 336px;
+    padding: 0;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
-  table {
+@media only screen and (min-width: 768px) and (max-width: 1278px) {
+  .table {
     margin-top: -45px;
     width: 336px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .content {
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    align-items: flex-start;
+  }
+  .container {
+    padding: 32px 0 46px 69px;
+    width: 395px;
+  }
+  h2 {
+    padding: 0 0 20px 0;
+  }
+  .table {
+    width: 395px;
+  }
+  .dashboard {
+    width: 395px;
   }
 }

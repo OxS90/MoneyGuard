@@ -1,18 +1,27 @@
-import React from 'react';
-import { useSelector } from 'react-redux'; // Importăm useSelector pentru a accesa starea Redux
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import css from './Balance.module.css';
-// Balance.js
+import { setTotalBalance } from '../../../../redux/balance/balanceSlice';
+import { selectTotalBalance } from '../../../../redux/balance/balanceSelectors';
+import { selectTransactions } from '../../../../redux/transactions/selectors';
 
 const Balance = () => {
-  const totalBalance = useSelector(state => state.balance.totalBalance); // Extragem totalul soldului din starea Redux
+  const dispatch = useDispatch();
+  const balance = useSelector(selectTotalBalance);
+  const transactions = useSelector(selectTransactions);
+
+  useEffect(() => {
+    const totalSum = transactions.reduce((sumValue, transaction) => {
+      let numberValue = parseFloat(transaction.amount);
+      return sumValue + numberValue;
+    }, 0);
+    dispatch(setTotalBalance(totalSum));
+  }, [dispatch, transactions]);
 
   return (
     <div className={css.styleBalance}>
       <h3 className={css.balanceTitle}>Your balance</h3>
-      <span className={css.numberBalance}>
-        ₴ {totalBalance.toFixed(2)}
-      </span>{' '}
-      {/* Afisăm soldul total al utilizatorului */}
+      <span className={css.numberBalance}>$ {balance.toFixed(2)}</span>{' '}
     </div>
   );
 };

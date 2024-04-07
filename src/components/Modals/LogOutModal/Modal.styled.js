@@ -2,44 +2,74 @@ import styled from 'styled-components';
 
 export const Overlay = styled.div`
   position: fixed;
-  top: 0;
+  flex-direction: column;
+  align-items: space-between;
+  top: 60px;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1200;
-  background: rgba(34, 13, 91, 0.23);
-  backdrop-filter: blur(3.5px);
-  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
-  opacity: 1;
-  visibility: visible;
+  z-index: 20;
 
-  @media screen and (min-width: 768px) {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 60px 0px;
+  &::before {
+    background: var(--Form-color, rgba(255, 255, 255, 0.1));
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(50px);
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  @media only screen and (min-width: 768px) {
+    justify-content: center;
+    top: 80px;
   }
 `;
 
 export const ModalWindow = styled.div`
-  width: 511px;
-  padding: 41px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at center, var(--purple), #623f8b);
-  border-radius: 8px;
-  position: relative;
+  width: 100%;
+  padding: 40px 20px;
+  background: var(--Form-color, rgba(255, 255, 255, 0.1));
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+  overflow: hidden;
+  height: 100%;
+  justify-content: center;
+  z-index: 20;
 
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-    padding: calc(20 * (100vw / 480));
-    min-width: 300px;
+  @media only screen and (min-width: 768px) {
+    position: absolute;
+    width: 540px;
+    height: 589px;
+    padding: 40px 73px;
+    border-radius: 8px;
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
+  &::before {
+    background-color: var(--transp-10);
+    content: '';
+    backdrop-filter: blur(50px);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+`;
+
+export const Gradient = styled.div`
+  z-index: -20;
+  position: absolute;
+  width: 454px;
+  height: 454px;
+  border-radius: 454px;
+  background: rgba(47, 21, 176, 0.73);
+  filter: blur(100px);
+  inset: 0;
 `;
 
 export const ButtonClose = styled.button`
@@ -65,8 +95,9 @@ export const CancelBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
+  margin-top: 20px;
   padding: 13px 68px;
   background-color: rgba(251, 251, 251, 1);
   border-radius: 20px;
@@ -78,4 +109,12 @@ export const CancelBtn = styled.button`
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
+  &:hover {
+    background-color: rgba(98, 63, 139, 1);
+    color: rgba(251, 251, 251, 1);
+  }
 `;

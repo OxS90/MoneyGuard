@@ -5,20 +5,22 @@ export const TransactionsTableStyled = styled.div`
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  max-width: 320px;
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     max-width: 768px;
     width: 100%;
     margin-top: 20px;
-    justify-content: center;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    padding-left: 20px;
   }
 
   @media screen and (min-width: 1280px) {
     flex-direction: row;
-    max-width: 800px;
+    // max-width: 800px;
     width: 100%;
-    margin-right: auto;
+    padding-left: 0;
+    margin-top: 0;
   }
 `;

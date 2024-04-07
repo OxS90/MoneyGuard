@@ -66,6 +66,7 @@ export const PSum = styled.td`
 export const Actions = styled.td`
   text-align: right;
   width: 150px;
+  padding-right: 10px;
 `;
 export const ActionsContainer = styled.div`
   width: 100%;
@@ -85,7 +86,7 @@ export const PencilButton = styled.button`
   color: var(--white);
 
   &:hover {
-    color: var(--icon-violet);
+    scale: 1.2;
   }
 `;
 
@@ -98,9 +99,7 @@ export const Button = styled.button`
   height: 29px;
   width: 69px;
   cursor: pointer;
-
   border: none;
-
   background: var(
     --button-gradient,
     linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%)
