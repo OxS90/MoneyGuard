@@ -26,7 +26,7 @@ const modalSlice = createSlice({
     },
     toggleTeamModal(state, action) {
       state.isModalOpen = !state.isModalOpen;
-      state.modalType = action.type;
+      state.modalType = null;
     },
   },
 });

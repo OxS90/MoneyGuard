@@ -2,11 +2,23 @@
 import React from 'react';
 import css from './TeamMember.module.css';
 
-const TeamMember = ({ name, role, imgSrc, githubLink, linkedinLink }) => (
+const TeamMember = ({
+  name,
+  role,
+  imgSrc,
+  imgSrcSet,
+  githubLink,
+  linkedinLink,
+}) => (
   <div className={css['footer-team-card']}>
     <picture className={css['footer-image-container']}>
-      <source srcSet={imgSrc} type="image/webp" />
-      <img className={css['footer-img-size']} src={imgSrc} alt={name} />
+      <source srcSet={imgSrcSet} type="image/webp" />
+      <img
+        className={css['footer-img-size']}
+        src={imgSrc}
+        srcSet={imgSrcSet}
+        alt={name}
+      />
     </picture>
     <div className={css['footer-member-info']}>
       <span className={css['footer-team-name']}>{name}</span>

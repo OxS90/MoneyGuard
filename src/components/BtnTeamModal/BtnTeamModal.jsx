@@ -1,10 +1,11 @@
-// BtnTeamModal.js
-import React, { useState } from 'react';
+import React from 'react';
 import { FcAbout } from 'react-icons/fc';
-import css from './BtnTeamModal.module.css';
 import { useDispatch } from 'react-redux';
 import { toggleTeamModal } from '../../redux/modal/slice';
 import TeamModal from '../Modals/TeamModal/TeamModal';
+import css from './BtnTeamModal.module.css';
+import { useState } from 'react';
+
 const svgOpenModal = <FcAbout />;
 
 const BtnTeamModal = () => {
@@ -27,8 +28,6 @@ const BtnTeamModal = () => {
         {svgOpenModal}
       </button>
       {isTeamModalOpen && <TeamModal closeModal={setIsTeamModalOpen} />}
-
-      {/* Nu este nevoie să verifici starea modalului aici, deoarece se face în TeamModal */}
     </>
   );
 };
