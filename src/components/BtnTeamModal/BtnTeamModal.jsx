@@ -1,19 +1,17 @@
 // BtnTeamModal.js
-import React, { useState } from 'react';
+import React from 'react';
 import { FcAbout } from 'react-icons/fc';
 import css from './BtnTeamModal.module.css';
 import { useDispatch } from 'react-redux';
-import { toggleTeamModal } from '../../redux/modal/slice';
-import TeamModal from '../Modals/TeamModal/TeamModal';
+import { toggleModal } from '../../redux/modal/slice';
+
 const svgOpenModal = <FcAbout />;
 
 const BtnTeamModal = () => {
   const dispatch = useDispatch();
-  const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
 
   const openTeamModal = () => {
-    dispatch(toggleTeamModal());
-    setIsTeamModalOpen(true);
+    dispatch(toggleModal()); // Dispatchează acțiunea pentru a deschide/închide modalul
   };
 
   return (
@@ -26,7 +24,6 @@ const BtnTeamModal = () => {
       >
         {svgOpenModal}
       </button>
-      {isTeamModalOpen && <TeamModal closeModal={setIsTeamModalOpen} />}
 
       {/* Nu este nevoie să verifici starea modalului aici, deoarece se face în TeamModal */}
     </>

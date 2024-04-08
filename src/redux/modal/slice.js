@@ -24,10 +24,6 @@ const modalSlice = createSlice({
     toggleModal(state, action) {
       state.isModalOpen = !state.isModalOpen;
     },
-    toggleTeamModal(state, action) {
-      state.isModalOpen = !state.isModalOpen;
-      state.modalType = action.type;
-    },
   },
 });
 
@@ -37,5 +33,4 @@ export const {
   toggleEditModal,
   toggleLogOutModal,
   toggleModal,
-  toggleTeamModal,
 } = modalSlice.actions;
