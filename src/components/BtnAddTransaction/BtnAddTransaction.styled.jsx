@@ -7,8 +7,8 @@ export const BtnOpenModal = styled.button`
   position: absolute;
   width: 44px;
   height: 44px;
-  bottom: 0;
-  right: 70px;
+  bottom: -25px;
+  right: 30px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -36,6 +36,6 @@ export const BtnOpenModal = styled.button`
   }
   @media only screen and (min-width: 1280px) {
     right: 30px;
-    bottom: -50px;
+    bottom: -30px;
   }
 `;

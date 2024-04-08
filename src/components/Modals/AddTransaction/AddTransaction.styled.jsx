@@ -12,7 +12,7 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  z-index: 10;
+  z-index: 20;
 
   &::before {
     background: var(--Form-color, rgba(255, 255, 255, 0.1));

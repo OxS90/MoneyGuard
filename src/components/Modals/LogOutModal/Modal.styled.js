@@ -4,8 +4,11 @@ export const Overlay = styled.div`
   position: fixed;
   flex-direction: column;
   align-items: space-between;
-  top: 60px;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -23,7 +26,6 @@ export const Overlay = styled.div`
 
   @media only screen and (min-width: 768px) {
     justify-content: center;
-    top: 80px;
   }
 `;
 
@@ -40,6 +42,7 @@ export const ModalWindow = styled.div`
   height: 100%;
   justify-content: center;
   z-index: 20;
+  position: fixed;
 
   @media only screen and (min-width: 768px) {
     position: absolute;

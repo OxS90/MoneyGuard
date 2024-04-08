@@ -7,13 +7,13 @@ export const StyledSectionHome = styled.section`
 
   @media only screen and (min-width: 768px) {
     width: 715px;
-    height: calc(100vh - 470px);
+    height: calc(100vh - 70px);
   }
 
   @media only screen and (min-width: 1280px) {
     margin-top: 20px;
     padding-left: 69px;
     width: 785px;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 70px);
   }
 `;

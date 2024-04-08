@@ -5,8 +5,8 @@
   position: absolute;
   width: 44px;
   height: 44px;
-  bottom: 0;
-  right: 120px;
+  bottom: -25px;
+  right: 80px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -40,7 +40,7 @@
 
 @media only screen and (min-width: 1280px) {
   .btnOpenModal {
-    bottom: -50px;
+    bottom: -30px;
     margin-left: 0;
   }
 }
