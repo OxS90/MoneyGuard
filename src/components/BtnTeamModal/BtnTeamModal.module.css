@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   width: 44px;
   height: 44px;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0;
+  right: 120px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -32,7 +32,7 @@
 
 @media only screen and (min-width: 768px) {
   .btnOpenModal {
-    bottom: 100px;
+    bottom: -50px;
     margin-left: 12px;
     /* left: 40px; */
   }
@@ -40,8 +40,7 @@
 
 @media only screen and (min-width: 1280px) {
   .btnOpenModal {
-    bottom: 50px;
+    bottom: -50px;
     margin-left: 0;
-    left: 140px;
   }
 }

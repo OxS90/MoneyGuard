@@ -4,11 +4,11 @@ export const BtnOpenModal = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   width: 44px;
   height: 44px;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 70px;
   border-radius: 50%;
   color: #fbfbfb;
   border: none;
@@ -31,8 +31,11 @@ export const BtnOpenModal = styled.button`
   }
 
   @media only screen and (min-width: 768px) {
-    bottom: 100px;
-    right: 40px;
-    bottom: 40px;
+    right: 35px;
+    bottom: -50px;
+  }
+  @media only screen and (min-width: 1280px) {
+    right: 30px;
+    bottom: -50px;
   }
 `;
