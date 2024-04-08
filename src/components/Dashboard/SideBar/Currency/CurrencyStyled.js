@@ -18,6 +18,7 @@ export const Graph = styled.div`
   @media screen and (min-width: 1280px) {
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
+    height: 300px;
   }
 `;
 
@@ -62,6 +63,7 @@ export const Wrap = styled.div`
 
   @media screen and (min-width: 1280px) {
     width: 480px;
+
     margin-top: 0px;
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
